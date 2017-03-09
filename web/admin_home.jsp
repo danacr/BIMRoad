@@ -1,5 +1,5 @@
-<%@page import="BIMRoad.Item,BIMRoad.Message,BIMRoad.User" %>
-<%@ page import="BIMRoad.helpers" %>
+<%@page import="Marketplace.Item,Marketplace.Message,Marketplace.User" %>
+<%@ page import="Marketplace.helpers" %>
 <%@ page import="java.net.URLEncoder" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page language="java" contentType="text/html; charset=US-ASCII"
@@ -15,29 +15,25 @@
     try {
         //get session of logged in user
         User user = (User) session.getAttribute("User");
+
+        //check if real admin
+        if (user.getIsAdmin() != 1) {
+            response.sendRedirect("home.jsp");
+            return;
+        }
+
 %>
 <div align="center" class="jumbotron">
     <div class="container">
-        <h1 class="display-3">Hi <%=user.getName() %>
+        <h1 class="display-3">Hi <%=user.getName() %> (Admin)
         </h1>
-        <%
-            //if user is admin
-            if (user.getIsAdmin() == 1) {
-        %>
-
-        <p><a href="admin_home.jsp">Admin Home</a></p>
-
-        <%
-            }
-        %>
-        <p>Below you see your profile details.</p>
+        <p>This is the admin interface.</p>
     </div>
 </div>
 <div class="container">
-    <strong>Your Email</strong>: <%=user.getEmail() %>
     <br>
     <br>
-    <h3>Your items</h3>
+    <h3>All items</h3>
     <div class="row">
         <table class="table">
             <thead>
@@ -51,7 +47,7 @@
             </thead>
             <tbody>
             <%
-                ArrayList<Item> dbItems = helpers.getItemsByUserid(user.getId());
+                ArrayList<Item> dbItems = helpers.getItems();
                 for (int i = 0; i < dbItems.size(); i++) {
                     Item tempItem = dbItems.get(i);
             %>
@@ -66,9 +62,7 @@
                 <td><%=tempItem.getDescription() %>
                 </td>
                 <td>
-                    <a href=editItemData.jsp?itemid=<%=tempItem.getId() %>>Edit</a>
-                    <a href=viewItem.jsp?itemid=<%=tempItem.getId() %>>View</a>
-                    <a href=deleteItem?id=<%=tempItem.getId() %>>Delete</a></td>
+                    <a href="deleteItem?id=<%=tempItem.getId() %>">Delete</a></td>
             </tr>
             <%
                 }
@@ -78,20 +72,74 @@
     </div>
     <br>
     <br>
-    <h3>Your messages</h3>
+    <h3>All Users</h3>
+    <div class="row">
+        <table class="table">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Street</th>
+                <th>Postalcode</th>
+                <th>City</th>
+                <th>Country</th>
+                <th>Creation</th>
+                <th>Admin</th>
+                <th>Action</th>
+            </tr>
+            </thead>
+            <tbody>
+            <%
+                ArrayList<User> dbUsers = helpers.getUsers();
+                for (int i = 0; i < dbUsers.size(); i++) {
+                    User tempUser = dbUsers.get(i);
+            %>
+            <tr>
+                <th scope="row"><%=tempUser.getId() %>
+                </th>
+                <td><%=tempUser.getName() %>
+                </td>
+                <td><%=tempUser.getEmail() %>
+                </td>
+                <td><%=tempUser.getStreet() %>
+                </td>
+                <td><%=tempUser.getPostalcode() %>
+                </td>
+                <td><%=tempUser.getCity() %>
+                </td>
+                <td><%=tempUser.getCountry() %>
+                </td>
+                <td><%=helpers.getDateFromTimestamp(tempUser.getCreationDate()) %>
+                </td>
+                <td><%=tempUser.getIsAdmin() %>
+                </td>
+                <td><a href="deleteUser?id=<%=tempUser.getId() %>">Delete</a>
+                </td>
+            </tr>
+            <%
+                }
+            %>
+            </tbody>
+        </table>
+    </div>
+    <br>
+    <br>
+    <h3>All Messages</h3>
     <div class="row">
         <table class="table">
             <thead>
             <tr>
                 <th>Sender</th>
                 <th>Sender email</th>
-                <th>content</th>
+                <th>Content</th>
+                <th>Receiver</th>
                 <th>Actions</th>
             </tr>
             </thead>
             <tbody>
             <%
-                ArrayList<Message> dbMessages = helpers.getMessagesByUsername(user.getName());
+                ArrayList<Message> dbMessages = helpers.getMessages();
                 for (int i = 0; i < dbMessages.size(); i++) {
                     Message tempMessage = dbMessages.get(i);
             %>
@@ -102,8 +150,9 @@
                 </td>
                 <td><%=tempMessage.getContent() %>
                 </td>
-                <td><a href="addmessage.jsp?receiver=<%=tempMessage.getSender() %>">Reply</a> <a
-                        href="deleteMessage?id=<%=tempMessage.getId() %>">Delete</a></td>
+                <td><%=tempMessage.getReceiver() %>
+                </td>
+                <td><a href="deleteMessage?id=<%=tempMessage.getId() %>">Delete</a></td>
             </tr>
             <%
                 }

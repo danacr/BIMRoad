@@ -1,5 +1,5 @@
-<%@page import="BIMRoad.Item,BIMRoad.User" %>
-<%@ page import="BIMRoad.helpers" %>
+<%@page import="Marketplace.Item,Marketplace.User" %>
+<%@ page import="Marketplace.helpers" %>
 
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
