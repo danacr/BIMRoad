@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component inherit-compiler-output="true" inheritJdk="true">
+	<output-test url="file://$MODULE_DIR$/out/test/BIMRoad"/>
+	<exclude-output/>
+	<contentEntry url="file://$MODULE_DIR$"/>
+	<lib name="Jetty 9.4.1.v20170120" scope="PROVIDED"/>
+	<lib name="apache-log4j" scope="COMPILE">
+		<srcroot url="file://$USER_HOME$/apache-log4j"/>
+		<srcroot url="file://$USER_HOME$/apache-log4j/contribs/CekiGulcu"/>
+		<srcroot url="file://$USER_HOME$/apache-log4j/contribs/Jamie Tsao"/>
+		<srcroot url="file://$USER_HOME$/apache-log4j/contribs/JimMoore"/>
+		<srcroot url="file://$USER_HOME$/apache-log4j/contribs/ThomasFenner"/>
+		<srcroot url="file://$USER_HOME$/apache-log4j/src/main/java"/>
+		<srcroot url="file://$USER_HOME$/apache-log4j/src/main/javadoc"/>
+		<srcroot url="file://$USER_HOME$/apache-log4j/src/performance/java"/>
+		<srcroot url="file://$USER_HOME$/apache-log4j/tests/src/java"/>
+	</lib>
+	<levels>
+		<level name="Jetty 9.4.1.v20170120" value="application_server_libraries"/>
+	</levels>
+</component>
