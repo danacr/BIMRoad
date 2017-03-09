@@ -20,10 +20,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="additemServlet.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Marketplace/additemServlet.java">
+        <entry file="file://$PROJECT_DIR$/src/BIMRoad/additemServlet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="27" column="23" lean-forward="false" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="23" />
+            <state relative-caret-position="0">
+              <caret line="0" column="8" lean-forward="false" selection-start-line="0" selection-start-column="8" selection-end-line="0" selection-end-column="8" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -32,7 +32,7 @@
         </entry>
       </file>
       <file leaf-file-name="Admin.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Marketplace/Admin.java">
+        <entry file="file://$PROJECT_DIR$/src/BIMRoad/Admin.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="30">
               <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
@@ -41,11 +41,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="database.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Marketplace/database.java">
+      <file leaf-file-name="database.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/BIMRoad/database.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+            <state relative-caret-position="90">
+              <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -53,8 +53,18 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="deleteMessage.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/deleteMessage.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="LoginServlet.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Marketplace/LoginServlet.java">
+        <entry file="file://$PROJECT_DIR$/src/BIMRoad/LoginServlet.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="765">
               <caret line="58" column="15" lean-forward="false" selection-start-line="58" selection-start-column="15" selection-end-line="58" selection-end-column="15" />
@@ -93,6 +103,9 @@
       <replace>itemname</replace>
     </replaceStrings>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="GradleLocalSettings">
     <option name="externalProjectsViewState">
       <projects_view />
@@ -101,7 +114,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/web/image.jsp" />
         <option value="$PROJECT_DIR$/web/bid.jsp" />
         <option value="$PROJECT_DIR$/src/Marketplace/servlet/errorhandler/AppErrorHandler.java" />
         <option value="$PROJECT_DIR$/src/Marketplace/servlet/filters/AuthenticationFilter.java" />
@@ -152,6 +164,7 @@
         <option value="$PROJECT_DIR$/src/Marketplace/database.java" />
         <option value="$PROJECT_DIR$/web/header.jsp" />
         <option value="$PROJECT_DIR$/web/home.jsp" />
+        <option value="$PROJECT_DIR$/src/BIMRoad/additemServlet.java" />
       </list>
     </option>
   </component>
@@ -167,6 +180,7 @@
     <option name="width" value="1685" />
     <option name="height" value="1129" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
@@ -232,7 +246,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Marketplace" />
+              <option name="myItemId" value="BIMRoad" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -247,10 +261,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value=".idea" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -692,7 +702,7 @@
       <method />
     </configuration>
     <configuration default="false" name="bimroad" type="heroku-deploy" factoryName="Heroku Deployment" server-name="Heroku">
-      <deployment type="module" name="Marketplace">
+      <deployment type="module" name="BIMRoad">
         <settings>
           <option name="host" value="" />
         </settings>
@@ -1394,12 +1404,20 @@
       <workItem from="1489009139104" duration="1262000" />
       <workItem from="1489011786121" duration="3139000" />
       <workItem from="1489016646071" duration="44000" />
-      <workItem from="1489051311069" duration="910000" />
+      <workItem from="1489051311069" duration="1497000" />
     </task>
+    <task id="LOCAL-00001" summary="Deploy">
+      <created>1489053234952</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1489053234952</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="138281000" />
+    <option name="totallyTimeSpent" value="138868000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="68" y="26" width="1685" height="1129" extended-state="0" />
@@ -1424,10 +1442,11 @@
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2908012" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19780889" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32937685" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1437,7 +1456,6 @@
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32443127" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3291874" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1445,6 +1463,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Deploy" />
+    <option name="LAST_COMMIT_MESSAGE" value="Deploy" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1457,7 +1479,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Marketplace/servlet/filters/AuthenticationFilter.java" />
     <entry file="file://$PROJECT_DIR$/src/Marketplace/servlet/deleteData.java" />
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml" />
     <entry file="file://$PROJECT_DIR$/src/Marketplace/servlet/WebsiteDBLink.java" />
@@ -1465,7 +1486,7 @@
     <entry file="file://$PROJECT_DIR$/src/Marketplace/WebDBLink.java" />
     <entry file="file://$PROJECT_DIR$/web/manifest.json" />
     <entry file="file://$PROJECT_DIR$/src/Marketplace/servlet/bidServlet.java" />
-    <entry file="file://$PROJECT_DIR$/src/Marketplace/LoginServlet.java" />
+    <entry file="file://$PROJECT_DIR$/src/BIMRoad/LoginServlet.java" />
     <entry file="jar://$USER_HOME$/jetty/lib/apache-jsp/org.mortbay.jasper.apache-jsp-8.5.9.1.jar!/org/apache/jasper/compiler/DefaultErrorHandler.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -1486,14 +1507,14 @@
     <entry file="file://$PROJECT_DIR$/web/addmessage.jsp" />
     <entry file="file://$PROJECT_DIR$/web/footer.jsp" />
     <entry file="file://$PROJECT_DIR$/src/Marketplace/emailChecker.java" />
-    <entry file="file://$PROJECT_DIR$/src/Marketplace/LogoutServlet.java">
+    <entry file="file://$PROJECT_DIR$/src/BIMRoad/LogoutServlet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
           <caret line="28" column="30" lean-forward="false" selection-start-line="28" selection-start-column="8" selection-end-line="28" selection-end-column="30" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Marketplace/addmessageServlet.java">
+    <entry file="file://$PROJECT_DIR$/src/BIMRoad/addmessageServlet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
           <caret line="30" column="89" lean-forward="false" selection-start-line="30" selection-start-column="89" selection-end-line="30" selection-end-column="89" />
@@ -1501,28 +1522,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Marketplace/deleteItem.java">
+    <entry file="file://$PROJECT_DIR$/src/BIMRoad/deleteItem.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
           <caret line="34" column="9" lean-forward="true" selection-start-line="33" selection-start-column="50" selection-end-line="33" selection-end-column="52" />
           <folding>
-            <marker date="1488973586000" expanded="true" signature="29:304" ph="..." />
+            <marker date="1489052818000" expanded="true" signature="25:300" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Marketplace/NewTest.java" />
-    <entry file="file://$PROJECT_DIR$/src/Marketplace/deleteMessage.java">
+    <entry file="file://$PROJECT_DIR$/src/BIMRoad/deleteMessage.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
           <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
           <folding>
-            <marker date="1488973586000" expanded="true" signature="29:248" ph="..." />
+            <marker date="1489052818000" expanded="true" signature="25:244" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Marketplace/editItemData.java">
+    <entry file="file://$PROJECT_DIR$/src/BIMRoad/editItemData.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
           <caret line="35" column="5" lean-forward="true" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
@@ -1530,7 +1551,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Marketplace/helpers.java">
+    <entry file="file://$PROJECT_DIR$/src/BIMRoad/helpers.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2025">
           <caret line="146" column="0" lean-forward="false" selection-start-line="146" selection-start-column="0" selection-end-line="146" selection-end-column="0" />
@@ -1538,57 +1559,57 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Marketplace/User.java">
+    <entry file="file://$PROJECT_DIR$/src/BIMRoad/User.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1245">
           <caret line="115" column="20" lean-forward="false" selection-start-line="115" selection-start-column="20" selection-end-line="115" selection-end-column="20" />
           <folding>
-            <marker date="1488978820000" expanded="true" signature="680:965" ph="{...}" />
-            <marker date="1488978820000" expanded="true" signature="1065:1180" ph="{...}" />
-            <marker date="1488978820000" expanded="true" signature="1220:1228" ph="{...}" />
-            <marker date="1488978820000" expanded="false" signature="1252:1263" ph=" { " />
-            <marker date="1488978820000" expanded="false" signature="1273:1279" ph=" }" />
-            <marker date="1488978820000" expanded="false" signature="1310:1321" ph=" { " />
-            <marker date="1488978820000" expanded="false" signature="1334:1340" ph=" }" />
-            <marker date="1488978820000" expanded="false" signature="1369:1380" ph=" { " />
-            <marker date="1488978820000" expanded="false" signature="1392:1398" ph=" }" />
-            <marker date="1488978820000" expanded="false" signature="1436:1447" ph=" { " />
-            <marker date="1488978820000" expanded="false" signature="1464:1470" ph=" }" />
-            <marker date="1488978820000" expanded="false" signature="1500:1511" ph=" { " />
-            <marker date="1488978820000" expanded="false" signature="1524:1530" ph=" }" />
-            <marker date="1488978820000" expanded="false" signature="1570:1581" ph=" { " />
-            <marker date="1488978820000" expanded="false" signature="1600:1606" ph=" }" />
-            <marker date="1488978820000" expanded="false" signature="1639:1650" ph=" { " />
-            <marker date="1488978820000" expanded="false" signature="1666:1672" ph=" }" />
-            <marker date="1488978820000" expanded="false" signature="1718:1729" ph=" { " />
-            <marker date="1488978820000" expanded="false" signature="1754:1760" ph=" }" />
-            <marker date="1488978820000" expanded="false" signature="1791:1802" ph=" { " />
-            <marker date="1488978820000" expanded="false" signature="1816:1822" ph=" }" />
-            <marker date="1488978820000" expanded="false" signature="1864:1875" ph=" { " />
-            <marker date="1488978820000" expanded="false" signature="1896:1902" ph=" }" />
-            <marker date="1488978820000" expanded="false" signature="1937:1948" ph=" { " />
-            <marker date="1488978820000" expanded="false" signature="1966:1972" ph=" }" />
-            <marker date="1488978820000" expanded="false" signature="2022:2033" ph=" { " />
-            <marker date="1488978820000" expanded="false" signature="2062:2068" ph=" }" />
-            <marker date="1488978820000" expanded="false" signature="2097:2108" ph=" { " />
-            <marker date="1488978820000" expanded="false" signature="2120:2126" ph=" }" />
-            <marker date="1488978820000" expanded="false" signature="2164:2175" ph=" { " />
-            <marker date="1488978820000" expanded="false" signature="2192:2198" ph=" }" />
-            <marker date="1488978820000" expanded="false" signature="2230:2241" ph=" { " />
-            <marker date="1488978820000" expanded="false" signature="2256:2262" ph=" }" />
-            <marker date="1488978820000" expanded="true" signature="2306:2317" ph=" { " />
-            <marker date="1488978820000" expanded="true" signature="2340:2346" ph=" }" />
-            <marker date="1488978820000" expanded="false" signature="2380:2391" ph=" { " />
-            <marker date="1488978820000" expanded="false" signature="2411:2417" ph=" }" />
-            <marker date="1488978820000" expanded="false" signature="2468:2479" ph=" { " />
-            <marker date="1488978820000" expanded="false" signature="2512:2518" ph=" }" />
-            <marker date="1488978820000" expanded="false" signature="2547:2558" ph=" { " />
-            <marker date="1488978820000" expanded="false" signature="2573:2579" ph=" }" />
+            <marker date="1489052818000" expanded="true" signature="676:961" ph="{...}" />
+            <marker date="1489052818000" expanded="true" signature="1061:1176" ph="{...}" />
+            <marker date="1489052818000" expanded="true" signature="1216:1224" ph="{...}" />
+            <marker date="1489052818000" expanded="false" signature="1248:1259" ph=" { " />
+            <marker date="1489052818000" expanded="false" signature="1269:1275" ph=" }" />
+            <marker date="1489052818000" expanded="false" signature="1306:1317" ph=" { " />
+            <marker date="1489052818000" expanded="false" signature="1330:1336" ph=" }" />
+            <marker date="1489052818000" expanded="false" signature="1365:1376" ph=" { " />
+            <marker date="1489052818000" expanded="false" signature="1388:1394" ph=" }" />
+            <marker date="1489052818000" expanded="false" signature="1432:1443" ph=" { " />
+            <marker date="1489052818000" expanded="false" signature="1460:1466" ph=" }" />
+            <marker date="1489052818000" expanded="false" signature="1496:1507" ph=" { " />
+            <marker date="1489052818000" expanded="false" signature="1520:1526" ph=" }" />
+            <marker date="1489052818000" expanded="false" signature="1566:1577" ph=" { " />
+            <marker date="1489052818000" expanded="false" signature="1596:1602" ph=" }" />
+            <marker date="1489052818000" expanded="false" signature="1635:1646" ph=" { " />
+            <marker date="1489052818000" expanded="false" signature="1662:1668" ph=" }" />
+            <marker date="1489052818000" expanded="false" signature="1714:1725" ph=" { " />
+            <marker date="1489052818000" expanded="false" signature="1750:1756" ph=" }" />
+            <marker date="1489052818000" expanded="false" signature="1787:1798" ph=" { " />
+            <marker date="1489052818000" expanded="false" signature="1812:1818" ph=" }" />
+            <marker date="1489052818000" expanded="false" signature="1860:1871" ph=" { " />
+            <marker date="1489052818000" expanded="false" signature="1892:1898" ph=" }" />
+            <marker date="1489052818000" expanded="false" signature="1933:1944" ph=" { " />
+            <marker date="1489052818000" expanded="false" signature="1962:1968" ph=" }" />
+            <marker date="1489052818000" expanded="false" signature="2018:2029" ph=" { " />
+            <marker date="1489052818000" expanded="false" signature="2058:2064" ph=" }" />
+            <marker date="1489052818000" expanded="false" signature="2093:2104" ph=" { " />
+            <marker date="1489052818000" expanded="false" signature="2116:2122" ph=" }" />
+            <marker date="1489052818000" expanded="false" signature="2160:2171" ph=" { " />
+            <marker date="1489052818000" expanded="false" signature="2188:2194" ph=" }" />
+            <marker date="1489052818000" expanded="false" signature="2226:2237" ph=" { " />
+            <marker date="1489052818000" expanded="false" signature="2252:2258" ph=" }" />
+            <marker date="1489052818000" expanded="true" signature="2302:2313" ph=" { " />
+            <marker date="1489052818000" expanded="true" signature="2336:2342" ph=" }" />
+            <marker date="1489052818000" expanded="false" signature="2376:2387" ph=" { " />
+            <marker date="1489052818000" expanded="false" signature="2407:2413" ph=" }" />
+            <marker date="1489052818000" expanded="false" signature="2464:2475" ph=" { " />
+            <marker date="1489052818000" expanded="false" signature="2508:2514" ph=" }" />
+            <marker date="1489052818000" expanded="false" signature="2543:2554" ph=" { " />
+            <marker date="1489052818000" expanded="false" signature="2569:2575" ph=" }" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Marketplace/RegisterServlet.java">
+    <entry file="file://$PROJECT_DIR$/src/BIMRoad/RegisterServlet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="765">
           <caret line="60" column="16" lean-forward="false" selection-start-line="60" selection-start-column="16" selection-end-line="60" selection-end-column="16" />
@@ -1603,7 +1624,7 @@
     <entry file="file://$PROJECT_DIR$/web/login.jsp" />
     <entry file="file://$PROJECT_DIR$/web/index.jsp" />
     <entry file="file://$PROJECT_DIR$/src/Marketplace/WebDBLink.java" />
-    <entry file="file://$PROJECT_DIR$/src/Marketplace/editUserData.java">
+    <entry file="file://$PROJECT_DIR$/src/BIMRoad/editUserData.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="818">
           <caret line="55" column="53" lean-forward="false" selection-start-line="55" selection-start-column="53" selection-end-line="55" selection-end-column="53" />
@@ -1613,7 +1634,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Marketplace/Item.java">
+    <entry file="file://$PROJECT_DIR$/src/BIMRoad/Item.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
@@ -1621,18 +1642,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Marketplace/imageServlet.java">
+    <entry file="file://$PROJECT_DIR$/src/BIMRoad/imageServlet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="278">
           <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1489009546000" expanded="true" signature="818:848" ph="Select * fro... Items" />
+            <marker date="1489052818000" expanded="true" signature="814:844" ph="Select * fro... Items" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Marketplace/bidItemServlet.java">
+    <entry file="file://$PROJECT_DIR$/src/BIMRoad/bidItemServlet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
@@ -1640,17 +1661,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Marketplace/additemServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="27" column="23" lean-forward="false" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Marketplace/LoginServlet.java">
+    <entry file="file://$PROJECT_DIR$/src/BIMRoad/LoginServlet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="765">
           <caret line="58" column="15" lean-forward="false" selection-start-line="58" selection-start-column="15" selection-end-line="58" selection-end-column="15" />
@@ -1664,7 +1675,7 @@
     <entry file="file://$PROJECT_DIR$/web/headeri.jsp" />
     <entry file="file://$PROJECT_DIR$/web/viewItem.jsp" />
     <entry file="file://$PROJECT_DIR$/web/header.jsp" />
-    <entry file="file://$PROJECT_DIR$/src/Marketplace/Admin.java">
+    <entry file="file://$PROJECT_DIR$/src/BIMRoad/Admin.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
@@ -1674,13 +1685,31 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/admin_home.jsp" />
     <entry file="file://$PROJECT_DIR$/web/home.jsp" />
-    <entry file="file://$PROJECT_DIR$/src/Marketplace/database.java">
+    <entry file="file://$PROJECT_DIR$/src/BIMRoad/additemServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="0" column="8" lean-forward="false" selection-start-line="0" selection-start-column="8" selection-end-line="0" selection-end-column="8" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/BIMRoad/database.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/deleteMessage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
