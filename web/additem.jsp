@@ -1,4 +1,4 @@
-<%@page import="Marketplace.User" %>
+<%@page import="BIMRoad.User" %>
 <%@ page import="java.net.URLEncoder" %>
 <%@ page language="java" contentType="text/html; charset=US-ASCII"
          pageEncoding="US-ASCII" %>

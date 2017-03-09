@@ -1,5 +1,5 @@
-<%@page import="Marketplace.Item,Marketplace.Message,Marketplace.User" %>
-<%@ page import="Marketplace.helpers" %>
+<%@page import="BIMRoad.Item,BIMRoad.Message,BIMRoad.User" %>
+<%@ page import="BIMRoad.helpers" %>
 <%@ page import="java.net.URLEncoder" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page language="java" contentType="text/html; charset=US-ASCII"
