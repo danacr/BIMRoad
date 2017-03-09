@@ -1,5 +1,5 @@
-<%@page import="Marketplace.Item,Marketplace.User" %>
-<%@ page import="Marketplace.helpers" %>
+<%@page import="BIMRoad.Item,BIMRoad.User" %>
+<%@ page import="BIMRoad.helpers" %>
 
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -7,22 +7,22 @@
     if (session1 == null || session1.getAttribute("User") == null) {
 %>
 <%@include file="headeri.jsp" %>
-<%  } else { %>
+<% } else { %>
 <%@include file="header.jsp" %>
-<%  }
-    try{
+<% }
+    try {
 %>
-<div class="jumbotron">
+<div align="center" class="jumbotron">
     <div class="container">
         <h1 class="display-3">Item details</h1>
         <p>Below you find the details about this item</p>
     </div>
 </div>
-<div class="container">
+<div align="center" class="container">
     <%
-    int itemid = Integer.parseInt(request.getParameter("itemid"));
+        int itemid = Integer.parseInt(request.getParameter("itemid"));
 
-    Item dbItem = helpers.getItemById(itemid);
+        Item dbItem = helpers.getItemById(itemid);
     %>
 
     <p><img width="200px" src="image?id=<%=dbItem.getId() %>"/>
@@ -35,19 +35,21 @@
     </p>
     <p><strong>Date added</strong>: <%=helpers.getDateFromTimestamp(dbItem.getCreationDate()) %>
     </p>
-    <% if (dbItem.getBid()!=0){ %>
-    <p><strong>Highest bid</strong>: &euro;<%=helpers.doubleToTwoDecimals(dbItem.getBid()) %> by <%=helpers.getUserById(dbItem.getBidderid()).getName() %>
+    <% if (dbItem.getBid() != 0) { %>
+    <p><strong>Highest bid</strong>: &euro;<%=helpers.doubleToTwoDecimals(dbItem.getBid()) %>
+        by <%=helpers.getUserById(dbItem.getBidderid()).getName() %>
     </p>
     <%
         }
 
-    //if user is logged in
-    if (session1 != null && session1.getAttribute("User") != null) {
-    User user = (User) session.getAttribute("User");
+        //if user is logged in
+        if (session1 != null && session1.getAttribute("User") != null) {
+            User user = (User) session.getAttribute("User");
 
-    User seller = helpers.getUserByItemId(dbItem.getId());
+            User seller = helpers.getUserByItemId(dbItem.getId());
     %>
-    <p><strong>Seller</strong>: <%=seller.getName() %> <a href="addmessage.jsp?receiver=<%=seller.getName() %>">Message</a>
+    <p><strong>Seller</strong>: <%=seller.getName() %> <a
+            href="addmessage.jsp?receiver=<%=seller.getName() %>">Message</a>
     </p>
     <form action="bidItemServlet" enctype="multipart/form-data">
         <div class="form-group">
@@ -59,10 +61,10 @@
         <input type="submit" class="btn btn-primary" value="Submit">
     </form>
     <%
-    }
-    } catch (Exception e) {
-        e.printStackTrace();
-    }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     %>
 </div>
 <%@include file="footer.jsp" %>

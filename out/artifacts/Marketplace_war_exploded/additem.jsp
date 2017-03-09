@@ -1,4 +1,4 @@
-<%@page import="Marketplace.User" %>
+<%@page import="BIMRoad.User" %>
 <%@ page import="java.net.URLEncoder" %>
 <%@ page language="java" contentType="text/html; charset=US-ASCII"
          pageEncoding="US-ASCII" %>
@@ -13,7 +13,7 @@
     try {
         User user = (User) session.getAttribute("User");
 %>
-<div class="jumbotron">
+<div align="center" class="jumbotron">
     <div class="container">
         <h1 class="display-3">Hi <%=user.getName() %>
         </h1>
@@ -66,7 +66,7 @@
     </form>
 </div>
 <%
-    }catch (Exception e){
+    } catch (Exception e) {
         e.printStackTrace();
     }
 %>

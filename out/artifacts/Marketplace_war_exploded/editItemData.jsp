@@ -1,4 +1,4 @@
-<%@page import=" Marketplace.Item,Marketplace.helpers,java.net.URLEncoder" %>
+<%@page import=" BIMRoad.Item,BIMRoad.helpers,java.net.URLEncoder" %>
 <%@ page language="java" contentType="text/html; charset=US-ASCII"
          pageEncoding="US-ASCII" %>
 <%@include file="header.jsp" %>
@@ -9,7 +9,7 @@
         response.sendRedirect("login.jsp?error=".concat(URLEncoder.encode("You need to be logged in", "UTF-8")));
     }
 %>
-<div class="jumbotron">
+<div align="center" class="jumbotron">
     <div class="container">
         <h1 class="display-3">Edit item details</h1>
         <p>Below you can edit your item for sale details.</p>
@@ -17,9 +17,9 @@
 </div>
 <div class="container">
     <%
-        try{
-        int itemid =  Integer.parseInt(request.getParameter("itemid"));
-        Item dbItem = helpers.getItemById(itemid);
+        try {
+            int itemid = Integer.parseInt(request.getParameter("itemid"));
+            Item dbItem = helpers.getItemById(itemid);
     %>
     <p><img width="200px" src="image?id=<%=dbItem.getId() %>"/>
     </p>

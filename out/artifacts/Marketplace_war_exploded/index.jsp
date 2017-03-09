@@ -1,4 +1,4 @@
-<%@page import="Marketplace.Item,Marketplace.helpers" %>
+<%@page import="BIMRoad.Item,BIMRoad.helpers" %>
 <%@ page import="java.util.ArrayList" %>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -6,17 +6,17 @@
     if (session1 == null || session1.getAttribute("User") == null) {
 %>
 <%@include file="headeri.jsp" %>
-<%  } else { %>
+<% } else { %>
 <%@include file="header.jsp" %>
-<%  }
+<% }
 %>
-<div class="jumbotron">
+<div align="center" class="jumbotron">
     <div class="container">
         <h1 class="display-3">BIM Road</h1>
         <p>Below you find a list with all items for sale.</p>
     </div>
 </div>
-<div class="container">
+<div align="center" class="container">
     <div class="row">
         <table class="table">
             <thead>
@@ -31,8 +31,7 @@
             <tbody>
             <%
                 ArrayList<Item> dbItems = helpers.getItems();
-                for(int i = 0; i < dbItems.size(); i++)
-                {
+                for (int i = 0; i < dbItems.size(); i++) {
                     Item tempItem = dbItems.get(i);
             %>
             <tr>
@@ -53,5 +52,5 @@
         </table>
     </div>
 </div>
-    <%@include file="footer.jsp" %>
+<%@include file="footer.jsp" %>
 

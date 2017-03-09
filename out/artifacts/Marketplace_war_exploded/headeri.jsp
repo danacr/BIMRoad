@@ -19,8 +19,9 @@
         body {
             padding-top: 2em;
         }
+
         .table {
-            table-layout:fixed;
+            table-layout: fixed;
         }
 
         .table td {

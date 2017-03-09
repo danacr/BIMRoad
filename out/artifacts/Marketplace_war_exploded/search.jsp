@@ -1,4 +1,4 @@
-<%@page import="Marketplace.Item,Marketplace.helpers" %>
+<%@page import="BIMRoad.Item,BIMRoad.helpers" %>
 <%@ page import="java.util.ArrayList" %>
 
 
@@ -7,13 +7,13 @@
     if (session1 == null || session1.getAttribute("User") == null) {
 %>
 <%@include file="headeri.jsp" %>
-<%  } else { %>
+<% } else { %>
 <%@include file="header.jsp" %>
-<%  }
+<% }
     try {
 %>
-<div class="jumbotron">
-    <div class="container">
+<div align="center" class="jumbotron">
+    <div align="center" class="container">
         <h1 class="display-3">You searched for <%=request.getParameter("itemname")%>
         </h1>
         <p>Below you can find a list that matches this search term.</p>
@@ -33,11 +33,10 @@
             </thead>
             <tbody>
             <%
-            String itemname = request.getParameter("itemname");
-            ArrayList<Item> dbItems = helpers.getItemsBySearch(itemname);
-            for(int i = 0; i < dbItems.size(); i++)
-            {
-                Item tempItem = dbItems.get(i);
+                String itemname = request.getParameter("itemname");
+                ArrayList<Item> dbItems = helpers.getItemsBySearch(itemname);
+                for (int i = 0; i < dbItems.size(); i++) {
+                    Item tempItem = dbItems.get(i);
             %>
             <tr>
                 <th scope="row"><img height="60" src="image?id=<%=tempItem.getId() %>"/>
@@ -51,15 +50,15 @@
                 <td><a href=viewItem.jsp?itemid=<%=tempItem.getId() %>> View </a></td>
             </tr>
             <%
-            }
+                }
             %>
             </tbody>
         </table>
     </div>
 </div>
 <%
-} catch (Exception e) {
-    e.printStackTrace();
-}
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
 %>
 <%@include file="footer.jsp" %>

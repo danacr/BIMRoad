@@ -19,8 +19,9 @@
         body {
             padding-top: 2em;
         }
+
         .table {
-            table-layout:fixed;
+            table-layout: fixed;
         }
 
         .table td {
@@ -55,10 +56,6 @@
                 <div class="dropdown-menu" aria-labelledby="dropdown01">
                     <a class="dropdown-item" href="home.jsp">Profile</a>
                     <a class="dropdown-item" href="editUserData.jsp">Edit profile</a>
-
-
-
-
 
                     <a class="dropdown-item" href="Logout">Logout</a>
                 </div>

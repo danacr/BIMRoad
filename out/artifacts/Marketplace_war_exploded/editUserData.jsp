@@ -1,10 +1,10 @@
-<%@page import="Marketplace.User,Marketplace.helpers,java.net.URLEncoder" %>
+<%@page import="BIMRoad.User,BIMRoad.helpers,java.net.URLEncoder" %>
 <%@ page language="java" contentType="text/html; charset=US-ASCII"
          pageEncoding="US-ASCII" %>
 
 <%@include file="header.jsp" %>
 
-<div class="jumbotron">
+<div align="center" class="jumbotron">
     <div class="container">
         <h1 class="display-3">Edit your details</h1>
         <p>Below you can edit your profile details.</p>
@@ -12,18 +12,19 @@
 </div>
 <div class="container">
     <%
-    HttpSession session1 = request.getSession(false);
-    //check if user is logged in
-    if (session1 == null || session1.getAttribute("User") == null) {
-        response.sendRedirect("login.jsp?error=".concat(URLEncoder.encode("You need to be logged in", "UTF-8")));
-    }
-    try {
-        //get user from session
-        User user = (User) session.getAttribute("User");
-        //get additional details from database
-        User dbUser = helpers.getUserById(user.getId());
+        HttpSession session1 = request.getSession(false);
+        //check if user is logged in
+        if (session1 == null || session1.getAttribute("User") == null) {
+            response.sendRedirect("login.jsp?error=".concat(URLEncoder.encode("You need to be logged in", "UTF-8")));
+        }
+        try {
+            //get user from session
+            User user = (User) session.getAttribute("User");
+            //get additional details from database
+            User dbUser = helpers.getUserById(user.getId());
     %>
-    <h3>Hi <%=dbUser.getName() %></h3>
+    <h3>Hi <%=dbUser.getName() %>
+    </h3>
     <p><strong>Name</strong>: <%=dbUser.getName() %>
     </p>
     <p><strong>Email</strong>: <%=dbUser.getEmail() %>

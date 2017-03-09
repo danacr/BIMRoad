@@ -20,39 +20,6 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" scope="PROVIDED" name="Jetty 9.4.1.v20170120" level="application_server_libraries" />
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
-          <root url="file://$USER_HOME$/apache-log4j" />
-        </CLASSES>
-        <JAVADOC>
-          <root url="file://$USER_HOME$/apache-log4j/site/apidocs" />
-        </JAVADOC>
-        <NATIVE>
-          <root url="file://$USER_HOME$/apache-log4j" />
-        </NATIVE>
-        <SOURCES>
-          <root url="file://$USER_HOME$/apache-log4j" />
-          <root url="file://$USER_HOME$/apache-log4j/contribs/CekiGulcu" />
-          <root url="file://$USER_HOME$/apache-log4j/contribs/Jamie Tsao" />
-          <root url="file://$USER_HOME$/apache-log4j/contribs/JimMoore" />
-          <root url="file://$USER_HOME$/apache-log4j/contribs/ThomasFenner" />
-          <root url="file://$USER_HOME$/apache-log4j/src/main/java" />
-          <root url="file://$USER_HOME$/apache-log4j/src/main/javadoc" />
-          <root url="file://$USER_HOME$/apache-log4j/src/performance/java" />
-          <root url="file://$USER_HOME$/apache-log4j/tests/src/java" />
-        </SOURCES>
-        <jarDirectory url="file://$USER_HOME$/apache-log4j" recursive="false" />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/web/WEB-INF/lib/commons-fileupload-1.3.2.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
+    <orderEntry type="library" scope="PROVIDED" name="mysql-connector-java" level="project" />
   </component>
 </module>
