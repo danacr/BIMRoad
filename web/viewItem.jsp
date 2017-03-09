@@ -25,7 +25,7 @@
         Item dbItem = helpers.getItemById(itemid);
     %>
 
-    <p><img width="200px" src="image?id=<%=dbItem.getId() %>"/>
+    <p><img width="400px" src="image?id=<%=dbItem.getId() %>"/>
     </p>
     <p><strong>Name</strong>: <%=dbItem.getItemname() %>
     </p>
@@ -54,7 +54,7 @@
     <form action="bidItemServlet" enctype="multipart/form-data">
         <div class="form-group">
             <label>Bid amount</label>
-            <input type="number" min="0.01" step="any" class="form-control" name="bidamount" required>
+            <input  type="number" min="0.01" step="any" class="form-control" name="bidamount" style="width: 8em" required>
         </div>
         <input type="hidden" name="itemid" value="<%=itemid%>">
         <input type="hidden" name="userid" value="<%=user.getId()%>">

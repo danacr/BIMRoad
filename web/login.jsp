@@ -131,7 +131,7 @@
         <br>
     </form>
     <div style="width: 100%; text-align: center;">
-        <a href="/Marketplace_war_exploded/">Back to home page</a>
+        <a href="index.jsp">Back to home page</a>
     </div>
 </div> <!-- /container -->
 </body>

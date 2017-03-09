@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-<link rel="shortcut icon" href="/favicon.ico"/>
-<link rel="icon" href="/favicon.ico" type="favicon.ico">
+<link rel="shortcut icon" href="/web/favicon.ico"/>
+<link rel="icon" href="/web/favicon.ico" type="favicon.ico">
 
 <head>
     <title>BIM Road</title>

@@ -10,7 +10,7 @@ import javax.servlet.http.Part;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URLEncoder;
-import java.nio.file.Paths;
+
 
 @WebServlet(name = "additem", urlPatterns = {"/additem"})
 @MultipartConfig
@@ -21,8 +21,8 @@ public class additemServlet extends HttpServlet {
 
         String itemname = request.getParameter("itemname");
         int userid = Integer.parseInt(request.getParameter("userid"));
-        Part filePart = request.getPart("image"); // Retrieves <input type="file" name="file">
-        String imagename = Paths.get(filePart.getSubmittedFileName()).getFileName().toString(); // MSIE fix.
+        Part filePart = request.getPart("image"); //
+        String imagename = filePart.getSubmittedFileName();
         InputStream image = filePart.getInputStream();
         String description = request.getParameter("description");
         double price = 0;
