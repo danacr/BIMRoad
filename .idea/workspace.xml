@@ -1,59 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bf16a1d3-ded1-40e0-b81e-d1d521e9d1aa" name="Default" comment="test">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/BIMRoad/Admin.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/BIMRoad/Item.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/BIMRoad/LoginServlet.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/BIMRoad/LogoutServlet.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/BIMRoad/Message.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/BIMRoad/RegisterServlet.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/BIMRoad/User.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/BIMRoad/additemServlet.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/BIMRoad/addmessageServlet.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/BIMRoad/bidItemServlet.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/BIMRoad/database.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/BIMRoad/deleteItem.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/BIMRoad/deleteMessage.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/BIMRoad/deleteUser.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/BIMRoad/editItemData.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/BIMRoad/editUserData.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/BIMRoad/helpers.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/BIMRoad/imageServlet.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Marketplace/.idea/misc.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Marketplace/.idea/modules.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Marketplace/.idea/src.iml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Marketplace/.idea/workspace.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Marketplace/Marketplace/Admin.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Marketplace/Marketplace/Item.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Marketplace/Marketplace/LoginServlet.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Marketplace/Marketplace/LogoutServlet.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Marketplace/Marketplace/Message.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Marketplace/Marketplace/RegisterServlet.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Marketplace/Marketplace/User.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Marketplace/Marketplace/additemServlet.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Marketplace/Marketplace/addmessageServlet.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Marketplace/Marketplace/bidItemServlet.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Marketplace/Marketplace/database.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Marketplace/Marketplace/deleteItem.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Marketplace/Marketplace/deleteMessage.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Marketplace/Marketplace/deleteUser.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Marketplace/Marketplace/editItemData.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Marketplace/Marketplace/editUserData.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Marketplace/Marketplace/helpers.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Marketplace/Marketplace/imageServlet.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/Marketplace_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/Marketplace_war_exploded.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+    <list default="true" id="bf16a1d3-ded1-40e0-b81e-d1d521e9d1aa" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/additem.jsp" afterPath="$PROJECT_DIR$/web/additem.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/addmessage.jsp" afterPath="$PROJECT_DIR$/web/addmessage.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/admin_home.jsp" afterPath="$PROJECT_DIR$/web/admin_home.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/editItemData.jsp" afterPath="$PROJECT_DIR$/web/editItemData.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/editUserData.jsp" afterPath="$PROJECT_DIR$/web/editUserData.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/home.jsp" afterPath="$PROJECT_DIR$/web/home.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/index.jsp" afterPath="$PROJECT_DIR$/web/index.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/search.jsp" afterPath="$PROJECT_DIR$/web/search.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/viewItem.jsp" afterPath="$PROJECT_DIR$/web/viewItem.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/BIMRoad/Admin.java" afterPath="$PROJECT_DIR$/src/BIMRoad/Admin.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -758,7 +708,7 @@
       <option name="presentableId" value="Default" />
       <updated>1489056459845</updated>
       <workItem from="1489056461747" duration="263000" />
-      <workItem from="1489056729065" duration="111000" />
+      <workItem from="1489056729065" duration="152000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1489056596256</created>
@@ -767,11 +717,18 @@
       <option name="project" value="LOCAL" />
       <updated>1489056596256</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="test">
+      <created>1489056867065</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1489056867065</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="374000" />
+    <option name="totallyTimeSpent" value="415000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
