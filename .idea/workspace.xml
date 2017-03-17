@@ -26,8 +26,8 @@
       <file leaf-file-name="database.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/BIMRoad/database.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+            <state relative-caret-position="135">
+              <caret line="11" column="47" lean-forward="true" selection-start-line="11" selection-start-column="47" selection-end-line="11" selection-end-column="47" />
               <folding />
             </state>
           </provider>
@@ -1291,7 +1291,7 @@
       <workItem from="1489523256978" duration="24000" />
       <workItem from="1489759171538" duration="1316000" />
       <workItem from="1489760550061" duration="702000" />
-      <workItem from="1489762581411" duration="130000" />
+      <workItem from="1489762581411" duration="200000" />
     </task>
     <task id="LOCAL-00001" summary="First version">
       <created>1489760025812</created>
@@ -1314,11 +1314,18 @@
       <option name="project" value="LOCAL" />
       <updated>1489762607742</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="First version">
+      <created>1489762720580</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1489762720580</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17194000" />
+    <option name="totallyTimeSpent" value="17264000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="99" y="23" width="1777" height="1129" extended-state="0" />
@@ -1365,6 +1372,7 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
     <MESSAGE value="First version" />
     <option name="LAST_COMMIT_MESSAGE" value="First version" />
@@ -1774,8 +1782,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/BIMRoad/database.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+        <state relative-caret-position="135">
+          <caret line="11" column="47" lean-forward="true" selection-start-line="11" selection-start-column="47" selection-end-line="11" selection-end-column="47" />
           <folding />
         </state>
       </provider>
