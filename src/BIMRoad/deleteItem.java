@@ -27,10 +27,10 @@ public class deleteItem extends HttpServlet {
         int id = Integer.parseInt(request.getParameter("id"));
 
         if (user.getIsAdmin() != 1) {
-            helpers.deleteItemWithUserId(id, user.getId());
+            Item.deleteItemWithUserId(id, user.getId());
             response.sendRedirect("home.jsp");
         } else {
-            helpers.deleteItem(id);
+            Item.deleteItem(id);
             response.sendRedirect("admin_home.jsp");
         }
     }

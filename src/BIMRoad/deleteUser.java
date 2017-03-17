@@ -30,7 +30,7 @@ public class deleteUser extends HttpServlet {
         } else {
             //get message id from URL (GET)
             int id = Integer.parseInt(request.getParameter("id"));
-            helpers.deleteUser(id);
+            User.deleteUser(id);
 
             response.sendRedirect("admin_home.jsp");
         }

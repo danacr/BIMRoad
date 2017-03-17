@@ -11,7 +11,8 @@ public class database {
     public database() throws ClassNotFoundException, SQLException {
         Class.forName("com.mysql.jdbc.Driver");
         this.connection = DriverManager.getConnection
-                ("jdbc:mysql://bimroad.cf5jtfkl4laz.eu-west-1.rds.amazonaws.com/marketplace?allowMultiQueries=true", "administrator", "2POB7RPj4uKLPHiVFpxvlL");
+                ("jdbc:mysql://localhost/marketplace?useSSL=false&allowMultiQueries=true", "username", "password");
+
     }
 
     public Connection getConnection() {

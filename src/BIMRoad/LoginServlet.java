@@ -44,7 +44,7 @@ public class LoginServlet extends HttpServlet {
         }
 
         //lookup this email and password
-        User dbUser = helpers.getUserByEmailPassword(email, password);
+        User dbUser = User.getUserByEmailPassword(email, password);
 
         //default value for id in User is -1 so we know when it is empty
         if (dbUser.getId() == -1) {

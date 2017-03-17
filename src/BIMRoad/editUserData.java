@@ -27,11 +27,14 @@ public class editUserData extends HttpServlet {
         String value = request.getParameter("value");
         int userid = Integer.parseInt(request.getParameter("userid"));
         PreparedStatement ps = null;
+        if (user.getIsAdmin() != 1) {
 
-        //if user we want to edit is not the logged in user
-        if (userid != user.getId()) {
-            response.sendRedirect("editUserData.jsp?error=Not+authorized.");
-            return;
+
+            //if user we want to edit is not the logged in user
+            if (userid != user.getId()) {
+                response.sendRedirect("editUserData.jsp?error=Not+authorized.");
+                return;
+            }
         }
 
         if ((what).equals("email")) {
@@ -45,15 +48,20 @@ public class editUserData extends HttpServlet {
             }
         }
 
-        helpers.updateUser(what, value, userid);
+        User.updateUser(what, value, userid);
 
-        //update session
-        User dbUser = helpers.getUserById(user.getId());
-        User newSessionUser = new User(dbUser.getId(), dbUser.getName(), dbUser.getEmail(), dbUser.getIsAdmin());
-        HttpSession session1 = request.getSession();
-        session1.setAttribute("User", newSessionUser);
+        if (user.getIsAdmin() != 1) {
 
-        response.sendRedirect("editUserData.jsp");
+            //update session
+            User dbUser = User.getUserById(user.getId());
+            User newSessionUser = new User(dbUser.getId(), dbUser.getName(), dbUser.getEmail(), dbUser.getIsAdmin());
+            HttpSession session1 = request.getSession();
+            session1.setAttribute("User", newSessionUser);
+
+            response.sendRedirect("editUserData.jsp");
+
+        } else response.sendRedirect("admin_home.jsp");
+
 
     }
 }

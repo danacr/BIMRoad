@@ -35,7 +35,7 @@ public class editItemData extends HttpServlet {
         }
 
         //update Item
-        helpers.updateItem(what, value, itemid, user.getId());
+        Item.updateItem(what, value, itemid, user.getId());
 
         response.sendRedirect("home.jsp");
     }

@@ -28,10 +28,10 @@ public class deleteMessage extends HttpServlet {
         int id = Integer.parseInt(request.getParameter("id"));
 
         if (user.getIsAdmin() != 1) {
-            helpers.deleteMessageWithUserName(id, user.getName());
+            Message.deleteMessageWithUserName(id, user.getName());
             response.sendRedirect("home.jsp");
         } else {
-            helpers.deleteMessage(id);
+            Message.deleteMessage(id);
             response.sendRedirect("admin_home.jsp");
         }
     }
