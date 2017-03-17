@@ -346,11 +346,11 @@ public class Item {
             if ((what).equals("description"))
                 ps = con.prepareStatement("UPDATE Items SET description = '" + value + "' WHERE id=" + itemid + " AND userid=" + userid);
 
-            //If the user select itemname, change the item name with the passed "itemname"
+                //If the user select itemname, change the item name with the passed "itemname"
             else if ((what).equals("itemname"))
                 ps = con.prepareStatement("UPDATE Items SET itemname = '" + value + "' WHERE id=" + itemid + " AND userid=" + userid);
 
-            //If the user select price, change the item price with the passed "price"
+                //If the user select price, change the item price with the passed "price"
             else if ((what).equals("price"))
                 ps = con.prepareStatement("UPDATE Items SET price = '" + value + "' WHERE id=" + itemid + " AND userid=" + userid);
 

@@ -9,22 +9,22 @@ import java.io.IOException;
 public class LogoutServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        
-    	//Check if there is a session
-    	HttpSession session = request.getSession(true);
-        
-    	//If there is no session
-    	if (session == null || session.getAttribute("User") == null) {
+
+        //Check if there is a session
+        HttpSession session = request.getSession(true);
+
+        //If there is no session
+        if (session == null || session.getAttribute("User") == null) {
             System.out.println("No access, not logged in");
-            
+
             //Redirect user to ERROR page
             response.sendRedirect("login.jsp?error=You+are+not+logged+in");
             return;
         }
 
-    	//If there is a session, define a new array of cookies and fill with the cookies
+        //If there is a session, define a new array of cookies and fill with the cookies
         Cookie[] cookies = request.getCookies();
-        
+
         //Create a for loop to close all cookies until cookies = null
         if (cookies != null) {
             for (Cookie cookie : cookies) {

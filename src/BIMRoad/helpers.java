@@ -1,13 +1,11 @@
 package BIMRoad;
 
-import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.TimeZone;
 
@@ -22,7 +20,7 @@ public class helpers {
 		return m.matches();
 	}
 
-	//Creates and returns a timestamp on the current time 
+	//Creates and returns a timestamp on the current time
 	public static int getUnixTimestamp() {
 		return (int) (System.currentTimeMillis() / 1000L);
 	}
@@ -30,7 +28,7 @@ public class helpers {
 
 	public static String getDateFromTimestamp(int timestamp) {
 
-		//Define an Date object called "date" with as constructor format "timestamp * 1000L" 
+		//Define an Date object called "date" with as constructor format "timestamp * 1000L"
 		Date date = new Date(timestamp * 1000L); // *1000 is to convert seconds to milliseconds
 
 		//Define a new SimpleDateFormat object called "sdf" with as constructor format "hours:minutes, day-month-year"
@@ -131,7 +129,7 @@ public class helpers {
 			//SQL Query to select the item with the same itemid that is passed.
 			PreparedStatement stmt = con.prepareStatement("SELECT * FROM Items WHERE id=" + itemid);
 
-			//Create a result set out of the query results 
+			//Create a result set out of the query results
 			ResultSet rs = stmt.executeQuery();
 			{
 				//If the item id exists in the database

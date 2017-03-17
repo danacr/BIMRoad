@@ -57,7 +57,7 @@ public class addmessageServlet extends HttpServlet {
 		if (errorMsg != null) {
 			response.sendRedirect("addmessage.jsp?error=".concat(URLEncoder.encode(errorMsg, "UTF-8")));
 
-			//if there is no error 
+			//if there is no error
 		} else {
 
 			//Set automatically the date of creation

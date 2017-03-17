@@ -54,7 +54,8 @@
     <form action="bidItemServlet" enctype="multipart/form-data">
         <div class="form-group">
             <label>Bid amount</label>
-            <input  type="number" min="0.01" step="any" class="form-control" name="bidamount" style="width: 8em" required>
+            <input type="number" min="0.01" step="any" class="form-control" name="bidamount" style="width: 8em"
+                   required>
         </div>
         <input type="hidden" name="itemid" value="<%=itemid%>">
         <input type="hidden" name="userid" value="<%=user.getId()%>">

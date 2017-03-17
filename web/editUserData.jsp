@@ -1,4 +1,4 @@
-<%@page import="BIMRoad.User,BIMRoad.helpers,java.net.URLEncoder" %>
+<%@page import="BIMRoad.User,java.net.URLEncoder" %>
 <%@ page language="java" contentType="text/html; charset=US-ASCII"
          pageEncoding="US-ASCII" %>
 
@@ -6,29 +6,29 @@
 <div align="center" class="jumbotron">
     <div class="container">
 
-    <%
-        HttpSession session1 = request.getSession(false);
-        //check if user is logged in
-        if (session1 == null || session1.getAttribute("User") == null) {
-            response.sendRedirect("login.jsp?error=".concat(URLEncoder.encode("You need to be logged in", "UTF-8")));
-        }
-        try {
-            //get user from session
-            User user = (User) session.getAttribute("User");
-            //get additional details from database
+        <%
+            HttpSession session1 = request.getSession(false);
+            //check if user is logged in
+            if (session1 == null || session1.getAttribute("User") == null) {
+                response.sendRedirect("login.jsp?error=".concat(URLEncoder.encode("You need to be logged in", "UTF-8")));
+            }
+            try {
+                //get user from session
+                User user = (User) session.getAttribute("User");
+                //get additional details from database
 
-            User dbUser=null;
+                User dbUser = null;
 
-            if (user.getIsAdmin() == 1) {
+                if (user.getIsAdmin() == 1) {
 
-                dbUser = User.getUserById(Integer.parseInt(request.getParameter("id"))); %>
-        <h1 class="display-3">Edit user <%=dbUser.getName() %></h1>
+                    dbUser = User.getUserById(Integer.parseInt(request.getParameter("id"))); %>
+        <h1 class="display-3">Edit user <%=dbUser.getName() %>
+        </h1>
         <p>Below you can edit the profile details of user <%=dbUser.getName() %>.</p>
-            <%
-        }
-
-             else{ dbUser = User.getUserById(user.getId());
-    %>
+        <%
+        } else {
+            dbUser = User.getUserById(user.getId());
+        %>
         <h1 class="display-3">Edit your details</h1>
         <p>Below you can edit your profile details.</p>
         <%
