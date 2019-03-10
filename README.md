@@ -1,7 +1,7 @@
 # BIMRoad
 Online marketplace written in JavaEE based on Servlets and MySQL. 
 
-Built by [Sverrevh](https://twitter.com/Sverrevh) and me as a University project.
+Built by [Sverrevh](https://github.com/sverrevh) and me as a University project.
 
 Requirements:
 
