@@ -1,5 +1,8 @@
 # BIMRoad
+
 Online marketplace written in JavaEE based on Servlets and MySQL. 
+
+<img src="https://github.com/danacr/BIMRoad/blob/master/web/Logo.png" alt="logo" width="200"/>
 
 Built by [Sverrevh](https://github.com/sverrevh) and me as a University project.
 
