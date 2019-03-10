@@ -1,0 +1,11 @@
+version: "3"
+services:
+  mariadb:
+    image: mariadb:10.4-bionic
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+
+  bimroad:
+    image: danacr/bimroad:latest
+    ports:
+      - 8080:8080
