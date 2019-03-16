@@ -1,4 +1,4 @@
-package BIMRoad;
+package main.java.BIMRoad;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

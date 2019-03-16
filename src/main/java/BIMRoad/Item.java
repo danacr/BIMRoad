@@ -1,4 +1,4 @@
-package BIMRoad;
+package main.java.BIMRoad;
 
 import java.io.InputStream;
 import java.sql.Connection;

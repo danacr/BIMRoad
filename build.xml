@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="bimroad" default="all">
+<project name="BIMRoad" default="all">
   
   
-  <property file="build.properties"/>
   <!-- Uncomment the following property if no tests compilation is needed -->
   <!-- 
   <property name="skip.tests" value="true"/>
@@ -53,16 +52,81 @@
     <exclude name="**/?*.aj"/>
   </patternset>
   
-  
-  <!-- Project Libraries -->
-  
-  <path id="library.maven:_javax.servlet:javax.servlet-api:4.0.1.classpath">
-    <pathelement location="${path.variable.maven_repository}/javax/servlet/javax.servlet-api/4.0.1/javax.servlet-api-4.0.1.jar"/>
-  </path>
-  
   <!-- Modules -->
   
-  <import file="${basedir}/module_bimroad.xml"/>
+  
+  <!-- Module BIMRoad -->
+  
+  <dirname property="module.bimroad.basedir" file="${ant.file}"/>
+  
+  
+  
+  <property name="compiler.args.bimroad" value="-encoding UTF-8 -source 5 -target 5 ${compiler.args}"/>
+  
+  <property name="bimroad.output.dir" value="${module.bimroad.basedir}/target/classes"/>
+  <property name="bimroad.testoutput.dir" value="${module.bimroad.basedir}/target/test-classes"/>
+  
+  <path id="bimroad.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="bimroad.module.production.classpath"/>
+  
+  <path id="bimroad.runtime.production.module.classpath">
+    <pathelement location="${bimroad.output.dir}"/>
+  </path>
+  
+  <path id="bimroad.module.classpath">
+    <pathelement location="${bimroad.output.dir}"/>
+  </path>
+  
+  <path id="bimroad.runtime.module.classpath">
+    <pathelement location="${bimroad.testoutput.dir}"/>
+    <pathelement location="${bimroad.output.dir}"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.bimroad">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.bimroad">
+    <patternset refid="excluded.from.module.bimroad"/>
+  </patternset>
+  
+  <path id="bimroad.module.sourcepath">
+    <dirset dir="${module.bimroad.basedir}">
+      <include name="src"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.bimroad" depends="compile.module.bimroad.production,compile.module.bimroad.tests" description="Compile module BIMRoad"/>
+  
+  <target name="compile.module.bimroad.production" description="Compile module BIMRoad; production classes">
+    <mkdir dir="${bimroad.output.dir}"/>
+    <javac destdir="${bimroad.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true">
+      <compilerarg line="${compiler.args.bimroad}"/>
+      <bootclasspath refid="bimroad.module.bootclasspath"/>
+      <classpath refid="bimroad.module.production.classpath"/>
+      <src refid="bimroad.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.bimroad"/>
+    </javac>
+    
+    <copy todir="${bimroad.output.dir}">
+      <fileset dir="${module.bimroad.basedir}/src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.bimroad.tests" depends="compile.module.bimroad.production" description="compile module BIMRoad; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.bimroad" description="cleanup module">
+    <delete dir="${bimroad.output.dir}"/>
+    <delete dir="${bimroad.testoutput.dir}"/>
+  </target>
   
   <target name="init" description="Build initialization">
     <!-- Perform any build initialization in this target -->
@@ -96,10 +160,10 @@
   <target name="artifact.bimroad:war_exploded" depends="init.artifacts, compile.module.bimroad" description="Build &#39;BIMRoad:war exploded&#39; artifact">
     <mkdir dir="${artifact.output.bimroad:war_exploded}"/>
     <copy todir="${artifact.output.bimroad:war_exploded}">
-      <fileset dir="${basedir}/web"/>
+      <fileset dir="/"/>
     </copy>
     <mkdir dir="${artifact.output.bimroad:war_exploded}/WEB-INF"/>
-    <copy file="${basedir}/web/WEB-INF/web.xml" tofile="${artifact.output.bimroad:war_exploded}/WEB-INF/web.xml"/>
+    <copy file="//WEB-INF/web.xml" tofile="${artifact.output.bimroad:war_exploded}/WEB-INF/web.xml"/>
     <mkdir dir="${artifact.output.bimroad:war_exploded}/WEB-INF"/>
     <mkdir dir="${artifact.output.bimroad:war_exploded}/WEB-INF/classes"/>
     <copy todir="${artifact.output.bimroad:war_exploded}/WEB-INF/classes">

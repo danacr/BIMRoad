@@ -20,9 +20,6 @@ Visiting `localhost:4040` will reveal the reverse tunnel address. (Other's can a
 
 To Build:
 
-Ant with IntelliJ javac2
-
 ```
-ant
 docker build . --tag danacr/bimroad
 ```
