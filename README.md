@@ -10,16 +10,10 @@ Requirements:
 
 Create the `marketplace` database in MariaDB, and the `Items` and `Users` tables (I might eventually add a provisioning script)
 
-To run:
-
-`docker-compose up`
+Run: `docker-compose up`
 
 Website will be available at `localhost:8080`
 
 Visiting `localhost:4040` will reveal the reverse tunnel address. (Other's can access the website at that link without the need of any port-forwarding)
 
-To Build:
-
-```
-docker build . --tag danacr/bimroad
-```
+Build: `docker build . --tag danacr/bimroad`
