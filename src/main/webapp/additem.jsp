@@ -1,4 +1,4 @@
-<%@page import="BIMRoad.User" %>
+<%@page import="main.java.BIMRoad.User" %>
 <%@ page import="java.net.URLEncoder" %>
 <%@ page language="java" contentType="text/html; charset=US-ASCII"
          pageEncoding="US-ASCII" %>
