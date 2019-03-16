@@ -1,5 +1,5 @@
-<%@page import="main.java.BIMRoad.Item,main.java.BIMRoad.Message,main.java.BIMRoad.User" %>
-<%@ page import="main.java.BIMRoad.helpers" %>
+<%@page import="BIMRoad.Item,BIMRoad.Message,BIMRoad.User" %>
+<%@ page import="BIMRoad.helpers" %>
 <%@ page import="java.net.URLEncoder" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page language="java" contentType="text/html; charset=US-ASCII"

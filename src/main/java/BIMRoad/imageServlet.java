@@ -1,4 +1,4 @@
-package main.java.BIMRoad;
+package BIMRoad;
 
 import javax.servlet.ServletException;
 import javax.servlet.ServletOutputStream;
