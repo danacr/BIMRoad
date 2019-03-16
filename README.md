@@ -6,9 +6,11 @@ Online marketplace written in JavaEE based on Servlets and MySQL.
 
 Built by [Sverrevh](https://github.com/sverrevh) and me as a University project.
 
-Getting stated:
+Getting started:
+![](gifs/setup.gif)
 
-Run: `docker-compose up`
+
+Run: `docker-compose up` (first run may take a bit, wait for mysqld to be ready on 3306)
 
 Create the `marketplace` database in MariaDB (adminer is running on `localhost:8081`) and import the `marketplace.sql`.
 
@@ -27,6 +29,9 @@ password: password
 ```
 
 Website will be available at `localhost:8080`
+
+Demo:
+![](gifs/demo.gif)
 
 Visiting `localhost:8082` will reveal the reverse tunnel address. (Other's can access the website at that link without the need of any port-forwarding)
 
