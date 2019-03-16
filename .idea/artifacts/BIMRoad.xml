@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="war" name="BIMRoad">
-    <output-path>$PROJECT_DIR$/</output-path>
-    <root id="archive" name="BIMRoad.war">
-      <element id="artifact" artifact-name="BIMRoad:war exploded" />
-    </root>
-  </artifact>
-</component>
