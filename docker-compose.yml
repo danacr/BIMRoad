@@ -4,6 +4,8 @@ services:
     image: mariadb:10.4-bionic
     environment:
       MYSQL_ROOT_PASSWORD: password
+    volumes:
+      - db:/var/lib/mysql
 
   bimroad:
     image: danacr/bimroad:latest
@@ -11,9 +13,18 @@ services:
     ports:
       - 8080:8080
 
+  adminer:
+    image: adminer
+    environment:
+      - ADMINER_DEFAULT_SERVER=mariadb
+    ports:
+      - 8081:8080      
+
   ngrok:
     image: wernight/ngrok
     command: ngrok http bimroad:8080
     ports: 
-      - 4040:4040
+      - 8082:4040
 
+volumes:
+  db:

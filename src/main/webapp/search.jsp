@@ -1,4 +1,4 @@
-<%@page import=".BIMRoad.Item,BIMRoad.helpers" %>
+<%@page import="BIMRoad.Item,BIMRoad.helpers" %>
 <%@ page import="java.util.ArrayList" %>
 
 
