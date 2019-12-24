@@ -4,13 +4,13 @@ services:
     image: danacr/bimroad
     container_name: bimroad
     ports:
-      - 8080:80
+      - 8080:8080
     volumes:
       - persistence:/usr/src/app/
 
   ngrok:
     image: wernight/ngrok
-    command: ngrok http bimroad:80
+    command: ngrok http bimroad:8080
     ports:
       - 8082:4040
 

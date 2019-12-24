@@ -11,4 +11,4 @@ COPY sql/h2backup.sql .
 
 RUN java -cp target/dependency/h2-*.jar org.h2.tools.RunScript -url jdbc:h2:file:./h2new -script h2backup.sql
 
-CMD java -jar target/dependency/webapp-runner-*.jar target/BIMRoad --port 80
+CMD java -jar target/dependency/webapp-runner-*.jar target/BIMRoad
