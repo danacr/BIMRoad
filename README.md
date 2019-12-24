@@ -9,7 +9,6 @@ Built by [Sverrevh](https://github.com/sverrevh) and me as a University project.
 [![Run on Google Cloud](https://deploy.cloud.run/button.svg)](https://deploy.cloud.run/?git_repo=https://github.com/danacr/BIMRoad.git)
 
 Getting started:
-![](gifs/setup.gif)
 
 Run: `docker-compose up`
 
