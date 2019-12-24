@@ -1,12 +1,18 @@
 # BIMRoad
 
-Online marketplace written in JavaEE based on Servlets and MySQL.
+Online marketplace written in JavaEE based on Servlets and H2.
 
 <img src="https://github.com/danacr/BIMRoad/blob/master/src/main/webapp/Logo.png" alt="logo" width="200"/>
 
 Built by [Sverrevh](https://github.com/sverrevh) and me as a University project.
 
 [![Run on Google Cloud](https://deploy.cloud.run/button.svg)](https://deploy.cloud.run/?git_repo=https://github.com/danacr/BIMRoad.git)
+
+Alternatively, run this command inside your Google Cloud shell:
+
+```
+cloudshell_open --repo_url "https://github.com/danacr/BIMRoad.git" --page "editor"
+```
 
 Getting started:
 
