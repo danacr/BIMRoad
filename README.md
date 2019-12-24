@@ -6,6 +6,8 @@ Online marketplace written in JavaEE based on Servlets and MySQL.
 
 Built by [Sverrevh](https://github.com/sverrevh) and me as a University project.
 
+[![Run on Google Cloud](https://deploy.cloud.run/button.svg)](https://deploy.cloud.run)
+
 Getting started:
 ![](gifs/setup.gif)
 
