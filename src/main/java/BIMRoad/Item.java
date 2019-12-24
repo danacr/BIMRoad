@@ -1,12 +1,13 @@
 package BIMRoad;
 
+import org.apache.commons.io.IOUtils;
+
 import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import org.apache.commons.io.IOUtils;
 
 public class Item {
 
@@ -24,7 +25,7 @@ public class Item {
     private int creationDate;
 
     public Item(int id, String itemname, String description, double price, int userid, double bid, int bidderid,
-            int creationDate) {
+                int creationDate) {
         this.id = id;
         this.itemname = itemname;
         this.description = description;
@@ -222,7 +223,7 @@ public class Item {
 
     // Add an item to the database
     public static boolean addItemToDatabase(String itemname, String description, double price, int userid,
-            String imagename, InputStream image, int creationDate) {
+                                            String imagename, InputStream image, int creationDate) {
 
         // Set the default of success on false.
         boolean success = false;
@@ -356,12 +357,12 @@ public class Item {
                 ps = con.prepareStatement(
                         "UPDATE Items SET description = '" + value + "' WHERE id=" + itemid + " AND userid=" + userid);
 
-            // If the user select itemname, change the item name with the passed "itemname"
+                // If the user select itemname, change the item name with the passed "itemname"
             else if ((what).equals("itemname"))
                 ps = con.prepareStatement(
                         "UPDATE Items SET itemname = '" + value + "' WHERE id=" + itemid + " AND userid=" + userid);
 
-            // If the user select price, change the item price with the passed "price"
+                // If the user select price, change the item price with the passed "price"
             else if ((what).equals("price"))
                 ps = con.prepareStatement(
                         "UPDATE Items SET price = '" + value + "' WHERE id=" + itemid + " AND userid=" + userid);
