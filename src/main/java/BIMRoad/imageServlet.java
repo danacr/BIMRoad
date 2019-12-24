@@ -16,8 +16,8 @@ import java.sql.ResultSet;
 @WebServlet("/image")
 public class imageServlet extends HttpServlet {
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
 
         String x = request.getParameter("id");
 
@@ -29,7 +29,6 @@ public class imageServlet extends HttpServlet {
             database db = new database();
             Connection con = db.getConnection();
 
-
             PreparedStatement stmt = con.prepareStatement("Select * from Items where id=?");
             stmt.setString(1, x);
             ServletOutputStream out = response.getOutputStream();
@@ -39,8 +38,9 @@ public class imageServlet extends HttpServlet {
 
                 while (rs.next()) {
                     s = rs.getString("imagename");
-                    image = rs.getBlob("image");
 
+                    // image = new javax.sql.rowset.serial.SerialBlob(rs.getBlob("image"));
+                    image = rs.getBlob("image");
                     InputStream imgData = image.getBinaryStream();
 
                     s = "image/" + s.substring(s.lastIndexOf('.') + 1);
@@ -60,12 +60,8 @@ public class imageServlet extends HttpServlet {
                 }
             }
 
-
         } catch (Exception e) {
-            //e.printStackTrace();
+            // e.printStackTrace();
         }
     }
 }
-
-
-

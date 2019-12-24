@@ -7,16 +7,7 @@ import java.util.ArrayList;
 
 public class User {
     /*
-    id
-    name
-    email
-    password
-    street
-    postalcode
-    city
-    country
-    creationDate
-    isAdmin
+     * id name email password street postalcode city country creationDate isAdmin
      */
 
     // -1 as that doesn't exist as id so we can detect empty User
@@ -31,8 +22,9 @@ public class User {
     private int creationDate;
     private int isAdmin;
 
-    //all atributes
-    public User(int id, String name, String email, String password, String street, String postalcode, String city, String country, int creationDate) {
+    // all atributes
+    public User(int id, String name, String email, String password, String street, String postalcode, String city,
+            String country, int creationDate) {
         this.id = id;
         this.name = name;
         this.email = email;
@@ -44,7 +36,7 @@ public class User {
         this.creationDate = creationDate;
     }
 
-    //some attributes for session
+    // some attributes for session
     public User(int id, String name, String email, int isAdmin) {
         this.id = id;
         this.name = name;
@@ -52,32 +44,33 @@ public class User {
         this.isAdmin = isAdmin;
     }
 
-    //no attributes
+    // no attributes
     public User() {
 
     }
 
-    //Get a user by its ID and return the info of that user
+    // Get a user by its ID and return the info of that user
     public static User getUserById(int id) {
 
-        //Create a new User object called "returnUser"
+        // Create a new User object called "returnUser"
         User returnUser = new User();
 
         try {
-            //Make a new database and connect the database
+            // Make a new database and connect the database
             database db = new database();
             Connection con = db.getConnection();
 
-            //SQL Query where you select all users where the ID is equal to the id that is passed
+            // SQL Query where you select all users where the ID is equal to the id that is
+            // passed
             PreparedStatement stmt = con.prepareStatement("Select * from Users WHERE id=" + id);
 
-            //The outcome of the SQL query is loaded in the variable "rs" / result set
+            // The outcome of the SQL query is loaded in the variable "rs" / result set
             ResultSet rs = stmt.executeQuery();
             {
-                //If the id is in the database
+                // If the id is in the database
                 if (rs.next()) {
 
-                    //Set the ID, name etc based on the information retrieved in the database
+                    // Set the ID, name etc based on the information retrieved in the database
                     returnUser.setId(rs.getInt("id"));
                     returnUser.setName(rs.getString("name"));
                     returnUser.setEmail(rs.getString("email"));
@@ -90,7 +83,7 @@ public class User {
                     returnUser.setIsAdmin(rs.getInt("isAdmin"));
                 }
             }
-            //Close everything
+            // Close everything
             stmt.close();
             rs.close();
             con.close();
@@ -102,18 +95,19 @@ public class User {
         return returnUser;
     }
 
-    //Get a user by its email and password and return the info of that user
+    // Get a user by its email and password and return the info of that user
     public static User getUserByEmailPassword(String email, String password) {
         User returnUser = new User();
 
         try {
             database db = new database();
             Connection con = db.getConnection();
-            PreparedStatement stmt = con.prepareStatement("Select * from Users WHERE email='" + email + "' AND password='" + password + "'");
+            PreparedStatement stmt = con.prepareStatement(
+                    "Select * from Users WHERE email='" + email + "' AND password='" + password + "'");
 
             ResultSet rs = stmt.executeQuery();
             {
-                //if we have a result
+                // if we have a result
                 if (rs.next()) {
                     returnUser.setId(rs.getInt("id"));
                     returnUser.setName(rs.getString("name"));
@@ -138,18 +132,19 @@ public class User {
         return returnUser;
     }
 
-    //Get a user by itemid and return the info of that user
+    // Get a user by itemid and return the info of that user
     public static User getUserByItemId(int itemid) {
         User returnUser = new User();
 
         try {
             database db = new database();
             Connection con = db.getConnection();
-            PreparedStatement stmt = con.prepareStatement("SELECT * FROM Users WHERE id IN (SELECT userid FROM Items WHERE id=" + itemid + ")");
+            PreparedStatement stmt = con.prepareStatement(
+                    "SELECT * FROM Users WHERE id IN (SELECT userid FROM Items WHERE id=" + itemid + ")");
 
             ResultSet rs = stmt.executeQuery();
             {
-                //if we have a result
+                // if we have a result
                 if (rs.next()) {
                     returnUser.setId(rs.getInt("id"));
                     returnUser.setName(rs.getString("name"));
@@ -174,7 +169,7 @@ public class User {
         return returnUser;
     }
 
-    //Get all the Users and return them in an ArrayList
+    // Get all the Users and return them in an ArrayList
     public static ArrayList<User> getUsers() {
         ArrayList<User> returnArray = new ArrayList<User>();
 
@@ -214,13 +209,14 @@ public class User {
         return returnArray;
     }
 
-    //Delete user with userid (admin)
+    // Delete user with userid (admin)
     public static void deleteUser(int userid) {
         try {
             database db = new database();
             Connection con = db.getConnection();
 
-            //check for both item id and user id to prevent users from deleting items that are not theirs.
+            // check for both item id and user id to prevent users from deleting items that
+            // are not theirs.
             PreparedStatement ps = con.prepareStatement("DELETE FROM Users WHERE id=" + userid);
 
             ps.execute();
@@ -233,14 +229,13 @@ public class User {
         }
     }
 
-    //Edit user details!
+    // Edit user details!
     public static void updateUser(String what, String value, int userid) {
         PreparedStatement ps = null;
 
         try {
             database db = new database();
             Connection con = db.getConnection();
-
 
             if ((what).equals("email"))
                 ps = con.prepareStatement("UPDATE Users SET email = '" + value + "' WHERE id=" + userid);

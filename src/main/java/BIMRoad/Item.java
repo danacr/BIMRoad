@@ -6,18 +6,12 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import org.apache.commons.io.IOUtils;
 
 public class Item {
 
     /*
-    id
-    itemname
-    description
-    price
-    userid
-    bid
-    bidderid
-    creationDate
+     * id itemname description price userid bid bidderid creationDate
      */
 
     private int id;
@@ -29,7 +23,8 @@ public class Item {
     private int bidderid;
     private int creationDate;
 
-    public Item(int id, String itemname, String description, double price, int userid, double bid, int bidderid, int creationDate) {
+    public Item(int id, String itemname, String description, double price, int userid, double bid, int bidderid,
+            int creationDate) {
         this.id = id;
         this.itemname = itemname;
         this.description = description;
@@ -44,7 +39,7 @@ public class Item {
 
     }
 
-    //Get an item by its itemID and return the info of that item
+    // Get an item by its itemID and return the info of that item
     public static Item getItemById(int id) {
         Item returnItem = new Item();
 
@@ -55,7 +50,7 @@ public class Item {
 
             ResultSet rs = stmt.executeQuery();
             {
-                //if we have a result
+                // if we have a result
                 if (rs.next()) {
                     returnItem.setId(rs.getInt("id"));
                     returnItem.setItemname(rs.getString("itemname"));
@@ -78,30 +73,33 @@ public class Item {
         return returnItem;
     }
 
-    //Get the items linked to a userID and return the info of the arraylist of items of that userID
+    // Get the items linked to a userID and return the info of the arraylist of
+    // items of that userID
     public static ArrayList<Item> getItemsByUserid(int userid) {
 
-        //Define an ArrayList object called "returnArray"
+        // Define an ArrayList object called "returnArray"
         ArrayList<Item> returnArray = new ArrayList<Item>();
 
         try {
-            //Connect to the database
+            // Connect to the database
             database db = new database();
             Connection con = db.getConnection();
 
-            //SQL Query that selects all items where the userID is the userID that is passed
-            PreparedStatement stmt = con.prepareStatement("Select * from Items WHERE userid='" + userid + "' ORDER BY id DESC");
+            // SQL Query that selects all items where the userID is the userID that is
+            // passed
+            PreparedStatement stmt = con
+                    .prepareStatement("Select * from Items WHERE userid='" + userid + "' ORDER BY id DESC");
 
-            //Create a resultset called "rs" and store the outcome of the query here
+            // Create a resultset called "rs" and store the outcome of the query here
             ResultSet rs = stmt.executeQuery();
             {
-                //If there are items found with that userID
+                // If there are items found with that userID
                 while (rs.next()) {
 
-                    //Create a new item object called "tempItem"
+                    // Create a new item object called "tempItem"
                     Item tempItem = new Item();
 
-                    //Define the variables of the item with the information found in the database
+                    // Define the variables of the item with the information found in the database
                     tempItem.setId(rs.getInt("id"));
                     tempItem.setItemname(rs.getString("itemname"));
                     tempItem.setDescription(rs.getString("description"));
@@ -111,12 +109,12 @@ public class Item {
                     tempItem.setBidderid(rs.getInt("bidderid"));
                     tempItem.setCreationDate(rs.getInt("creationdate"));
 
-                    //Add "tempItem" to the ArrayList "returnArray"
+                    // Add "tempItem" to the ArrayList "returnArray"
                     returnArray.add(tempItem);
                 }
             }
 
-            //Close everything properly
+            // Close everything properly
             stmt.close();
             rs.close();
             con.close();
@@ -126,34 +124,37 @@ public class Item {
             e.printStackTrace();
         }
 
-        //Return the Arraylist "returnArray"
+        // Return the Arraylist "returnArray"
         return returnArray;
     }
 
-    //Get the items that have "itemnames" like "searchTerm" and return the info of those items in an ArrayList
+    // Get the items that have "itemnames" like "searchTerm" and return the info of
+    // those items in an ArrayList
     public static ArrayList<Item> getItemsBySearch(String searchTerm) {
 
-        //Define an ArrayList object called "returnArray"
+        // Define an ArrayList object called "returnArray"
         ArrayList<Item> returnArray = new ArrayList<Item>();
 
         try {
-            //Connect to the database
+            // Connect to the database
             database db = new database();
             Connection con = db.getConnection();
 
-            //SQL Query that selects all items where the "itemname" is like the "searchTerm" that is passed
-            PreparedStatement stmt = con.prepareStatement("Select * from Items WHERE itemname LIKE '%" + searchTerm + "%' ORDER BY id DESC");
+            // SQL Query that selects all items where the "itemname" is like the
+            // "searchTerm" that is passed
+            PreparedStatement stmt = con.prepareStatement(
+                    "Select * from Items WHERE itemname LIKE '%" + searchTerm + "%' ORDER BY id DESC");
 
-            //Create a resultset called "rs" and store the outcome of the query here
+            // Create a resultset called "rs" and store the outcome of the query here
             ResultSet rs = stmt.executeQuery();
             {
-                //If there are items with itemnames like "searchTerm"
+                // If there are items with itemnames like "searchTerm"
                 while (rs.next()) {
 
-                    //Create a new item object called "tempItem"
+                    // Create a new item object called "tempItem"
                     Item tempItem = new Item();
 
-                    //Define the variables of the item with the information found in the database
+                    // Define the variables of the item with the information found in the database
                     tempItem.setId(rs.getInt("id"));
                     tempItem.setItemname(rs.getString("itemname"));
                     tempItem.setDescription(rs.getString("description"));
@@ -163,11 +164,11 @@ public class Item {
                     tempItem.setBidderid(rs.getInt("bidderid"));
                     tempItem.setCreationDate(rs.getInt("creationdate"));
 
-                    //add tempItem to the ArrayList "returnArray"
+                    // add tempItem to the ArrayList "returnArray"
                     returnArray.add(tempItem);
                 }
             }
-            //Close everything properly"
+            // Close everything properly"
             stmt.close();
             rs.close();
             con.close();
@@ -177,11 +178,11 @@ public class Item {
             e.printStackTrace();
         }
 
-        //return the ArrayList "returnArray"
+        // return the ArrayList "returnArray"
         return returnArray;
     }
 
-    //Get all the items that are in the database and return them in an ArrayList
+    // Get all the items that are in the database and return them in an ArrayList
     public static ArrayList<Item> getItems() {
         ArrayList<Item> returnArray = new ArrayList<Item>();
 
@@ -219,37 +220,40 @@ public class Item {
         return returnArray;
     }
 
-    //Add an item to the database
-    public static boolean addItemToDatabase(String itemname, String description, double price, int userid, String imagename, InputStream image, int creationDate) {
+    // Add an item to the database
+    public static boolean addItemToDatabase(String itemname, String description, double price, int userid,
+            String imagename, InputStream image, int creationDate) {
 
-        //Set the default of success on false.
+        // Set the default of success on false.
         boolean success = false;
         PreparedStatement ps = null;
 
         try {
-            //Connect to the database
+            // Connect to the database
             database db = new database();
             Connection con = db.getConnection();
 
-            //Add the itemname in the first column of the database, the description in the second, etc
-            ps = con.prepareStatement("insert into Items(itemname, description, price, userid, imagename, image, creationDate) values (?,?,?,?,?,?,?)");
+            // Add the itemname in the first column of the database, the description in the
+            // second, etc
+            ps = con.prepareStatement(
+                    "insert into Items(itemname, description, price, userid, imagename, image, creationDate) values (?,?,?,?,?,?,?)");
             ps.setString(1, itemname);
             ps.setString(2, description);
             ps.setDouble(3, price);
             ps.setInt(4, userid);
             ps.setString(5, imagename);
-            ps.setBlob(6, image);
+            ps.setBytes(6, IOUtils.toByteArray(image));
             ps.setInt(7, creationDate);
 
             ps.execute();
 
-            //Set the success on true.
+            // Set the success on true.
             success = true;
 
-            //Print out in the consule: Item is added
+            // Print out in the consule: Item is added
             System.out.println("Item added itemname=" + itemname);
 
-            //Close everything properly
+            // Close everything properly
             ps.close();
             con.close();
             db.connection.close();
@@ -264,25 +268,25 @@ public class Item {
                 System.out.println("SQLException in closing PreparedStatement");
             }
         }
-        //Return the value of success
+        // Return the value of success
         return success;
     }
 
-    //Update the HighestBid
+    // Update the HighestBid
     public static void updateHighestBid(Double bidAmount, int itemid, int userid) {
         try {
-            //Connect to the database
+            // Connect to the database
             database db = new database();
             Connection con = db.getConnection();
 
-            //SQL Query to update the bidAmount and the bidderID of the item that is bid on
-            PreparedStatement ps = con.prepareStatement("UPDATE Items SET bid = " + bidAmount + ", bidderid = " + userid + " WHERE id='" + itemid + "'");
+            // SQL Query to update the bidAmount and the bidderID of the item that is bid on
+            PreparedStatement ps = con.prepareStatement(
+                    "UPDATE Items SET bid = " + bidAmount + ", bidderid = " + userid + " WHERE id='" + itemid + "'");
 
-            //Execute query
+            // Execute query
             ps.execute();
 
-
-            //Close everything properly
+            // Close everything properly
             ps.close();
             con.close();
             db.connection.close();
@@ -292,16 +296,18 @@ public class Item {
         }
     }
 
-    //Delete an item based on the itemid
+    // Delete an item based on the itemid
     public static void deleteItemWithUserId(int itemid, int userid) {
         try {
 
-            //Connect to database
+            // Connect to database
             database db = new database();
             Connection con = db.getConnection();
 
-            //check for both item id and user id to prevent users from deleting items that are not theirs.
-            PreparedStatement ps = con.prepareStatement("DELETE FROM Items WHERE id=" + itemid + " AND userid=" + userid);
+            // check for both item id and user id to prevent users from deleting items that
+            // are not theirs.
+            PreparedStatement ps = con
+                    .prepareStatement("DELETE FROM Items WHERE id=" + itemid + " AND userid=" + userid);
 
             ps.execute();
             ps.close();
@@ -313,13 +319,14 @@ public class Item {
         }
     }
 
-    //Delete item with only itemID (admin)
+    // Delete item with only itemID (admin)
     public static void deleteItem(int itemid) {
         try {
             database db = new database();
             Connection con = db.getConnection();
 
-            //check for both item id and user id to prevent users from deleting items that are not theirs.
+            // check for both item id and user id to prevent users from deleting items that
+            // are not theirs.
             PreparedStatement ps = con.prepareStatement("DELETE FROM Items WHERE id=" + itemid);
 
             ps.execute();
@@ -332,33 +339,38 @@ public class Item {
         }
     }
 
-    //Edit item based on what is selected (what), with what (value), which item (itemid) and of which user (userid)
+    // Edit item based on what is selected (what), with what (value), which item
+    // (itemid) and of which user (userid)
     public static void updateItem(String what, String value, int itemid, int userid) {
         PreparedStatement ps = null;
 
         try {
 
-            //Connect to database
+            // Connect to database
             database db = new database();
             Connection con = db.getConnection();
 
-            //If the user select description, change the item description with the passed "value"
+            // If the user select description, change the item description with the passed
+            // "value"
             if ((what).equals("description"))
-                ps = con.prepareStatement("UPDATE Items SET description = '" + value + "' WHERE id=" + itemid + " AND userid=" + userid);
+                ps = con.prepareStatement(
+                        "UPDATE Items SET description = '" + value + "' WHERE id=" + itemid + " AND userid=" + userid);
 
-                //If the user select itemname, change the item name with the passed "itemname"
+            // If the user select itemname, change the item name with the passed "itemname"
             else if ((what).equals("itemname"))
-                ps = con.prepareStatement("UPDATE Items SET itemname = '" + value + "' WHERE id=" + itemid + " AND userid=" + userid);
+                ps = con.prepareStatement(
+                        "UPDATE Items SET itemname = '" + value + "' WHERE id=" + itemid + " AND userid=" + userid);
 
-                //If the user select price, change the item price with the passed "price"
+            // If the user select price, change the item price with the passed "price"
             else if ((what).equals("price"))
-                ps = con.prepareStatement("UPDATE Items SET price = '" + value + "' WHERE id=" + itemid + " AND userid=" + userid);
+                ps = con.prepareStatement(
+                        "UPDATE Items SET price = '" + value + "' WHERE id=" + itemid + " AND userid=" + userid);
 
             ps.execute();
 
             ps.execute();
 
-            //Close everything properly
+            // Close everything properly
             ps.close();
             con.close();
             db.connection.close();

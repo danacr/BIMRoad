@@ -9,9 +9,8 @@ public class database {
     public Connection connection;
 
     public database() throws ClassNotFoundException, SQLException {
-        Class.forName("com.mysql.jdbc.Driver");
-        this.connection = DriverManager.getConnection
-                ("jdbc:mysql://mariadb:3306/marketplace?useSSL=false&allowMultiQueries=true", "root", "password");
+
+        this.connection = DriverManager.getConnection("jdbc:h2:file:./h2new;FILE_LOCK=SOCKET;MODE=MYSQL;");
 
     }
 

@@ -1,13 +1,14 @@
-FROM maven:3.6.0-jdk-8-alpine as builder
+FROM maven:3.6-slim
 
-COPY src /usr/src/app/src  
-COPY pom.xml /usr/src/app  
-RUN mvn -f /usr/src/app/pom.xml clean package
+WORKDIR  /usr/src/app/
 
+COPY pom.xml .
+COPY src/ src/
+RUN mvn clean package && \
+    mvn dependency:copy-dependencies
 
-FROM tomcat:8-jre8-alpine
+COPY sql/h2backup.sql .
 
-RUN rm -fr /usr/local/tomcat/webapps/ROOT
-COPY --from=builder /usr/src/app/target/BIMRoad-1.0-SNAPSHOT   /usr/local/tomcat/webapps/ROOT
+RUN java -cp target/dependency/h2-*.jar org.h2.tools.RunScript -url jdbc:h2:file:./h2new -script h2backup.sql
 
-CMD ["catalina.sh", "run"]
+CMD java -jar target/dependency/webapp-runner-*.jar target/BIMRoad
