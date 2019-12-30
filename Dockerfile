@@ -4,6 +4,7 @@ WORKDIR  /usr/src/app/
 
 COPY pom.xml .
 COPY src/ src/
+
 RUN mvn clean package && \
     mvn dependency:copy-dependencies
 
