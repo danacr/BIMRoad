@@ -21,7 +21,13 @@
 
                 if (user.getIsAdmin() == 1) {
 
-                    dbUser = User.getUserById(Integer.parseInt(request.getParameter("id"))); %>
+                    // If Admin clicked on Edit Profile
+                    if (request.getParameter("id") == null) {
+                       dbUser = User.getUserById(user.getId());
+                    } else {
+                    dbUser = User.getUserById(Integer.parseInt(request.getParameter("id")));
+                    }
+         %>
         <h1 class="display-3">Edit user <%=dbUser.getName() %>
         </h1>
         <p>Below you can edit the profile details of user <%=dbUser.getName() %>.</p>
