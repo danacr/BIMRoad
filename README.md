@@ -37,10 +37,16 @@ Build: `docker build . --tag danacr/bimroad`
 Useful commands:
 
 ```
-java -cp h2-1.4.199.jar org.h2.tools.Script -url jdbc:h2:file:./h2 -script 'h2backup.sql'
-target/dependency/h2-1.4.200.jar
-java -jar tools/webapp-runner.jar target/BIMRoad-1.0-SNAPSHOT --port 9090
-java -cp target/dependency/h2-*.jar org.h2.tools.RunScript -url jdbc:h2:file:./h2new -script tools/h2backup.sql
+java -jar target/dependency/webapp-runner-*.jar target/BIMRoad
+
+# Restore
+java -cp target/dependency/h2-*.jar org.h2.tools.RunScript -url jdbc:h2:file:./h2new -script sql/h2backup.sql
+
+# Backup
+java -cp target/dependency/h2-*.jar org.h2.tools.Script -url jdbc:h2:file:./h2new -script 'h2backup.sql'
+
+# Maven
+mvn install dependency:copy-dependencies
 mvn install
-mvn clean package
+mvn package
 ```
