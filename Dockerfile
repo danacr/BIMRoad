@@ -1,4 +1,4 @@
-FROM maven:3.6-slim
+FROM maven:slim
 
 WORKDIR  /usr/src/app/
 
