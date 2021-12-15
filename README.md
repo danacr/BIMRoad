@@ -13,6 +13,8 @@ Alternatively, run this command inside your Google Cloud shell:
 ```
 cloudshell_open --repo_url "https://github.com/danacr/BIMRoad.git" --page "editor"
 ```
+> Note: because the repository contains capital letters, you must must remove `$REPO_NAME` from your inline `cloudbuild.yaml`, e.g.
+from `$_GCR_HOSTNAME/$PROJECT_ID/$REPO_NAME/$_SERVICE_NAME:$COMMIT_SHA` to `$_GCR_HOSTNAME/$PROJECT_ID/$_SERVICE_NAME:$COMMIT_SHA`
 
 Getting started:
 
