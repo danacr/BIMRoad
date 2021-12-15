@@ -1,6 +1,6 @@
 # BIMRoad
 
-Online marketplace written in JavaEE based on Servlets and H2.
+Online marketplace written in JavaEE based on Servlets and H2 using Google Cloud Run.
 
 <img src="https://github.com/danacr/BIMRoad/blob/master/src/main/webapp/Logo.png" alt="logo" width="200"/>
 
