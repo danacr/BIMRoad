@@ -1,6 +1,6 @@
 # BIMRoad
 
-Online marketplace written in JavaEE based on Servlets and H2. CICD is done using Google Cloud Build and Google Cloud Run.
+Online marketplace written in JavaEE based on Servlets and H2. CICD is done using Google Cloud Build and Run.
 
 <img src="https://github.com/danacr/BIMRoad/blob/master/src/main/webapp/Logo.png" alt="logo" width="200"/>
 
