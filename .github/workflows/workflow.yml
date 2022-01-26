@@ -4,7 +4,7 @@ on:
   push:
 
 env:
-  REGISTRY: eu.gcr.io
+  REGISTRY: europe-west4-docker.pkg.dev
   IMAGE_NAME: ${{ github.event.repository.name }}
 
 jobs:
@@ -76,7 +76,7 @@ jobs:
 
       # Configure docker to use the gcloud command-line tool as a credential helper
       - run: |
-          gcloud auth configure-docker -q
+          gcloud auth configure-docker europe-west4-docker.pkg.dev -q
 
       # Push image to Google Container Registry
       - name: Push image to GCR
