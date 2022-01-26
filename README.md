@@ -2,6 +2,8 @@
 
 Online marketplace written in JavaEE based on Servlets and H2. CICD is done using Google Cloud Build and Run.
 
+[![Build, Push, Deploy](https://github.com/danacr/BIMRoad/actions/workflows/workflow.yml/badge.svg)](https://github.com/danacr/BIMRoad/actions/workflows/workflow.yml)
+
 <img src="https://github.com/danacr/BIMRoad/blob/master/src/main/webapp/Logo.png" alt="logo" width="200"/>
 
 Built by [Sverrevh](https://github.com/sverrevh) and me as a University project.
@@ -13,8 +15,9 @@ Alternatively, run this command inside your Google Cloud shell:
 ```
 cloudshell_open --repo_url "https://github.com/danacr/BIMRoad.git" --page "editor"
 ```
+
 > Note: because the repository contains capital letters, you must must remove `$REPO_NAME` from your inline `cloudbuild.yaml`, e.g.
-from `$_GCR_HOSTNAME/$PROJECT_ID/$REPO_NAME/$_SERVICE_NAME:$COMMIT_SHA` to `$_GCR_HOSTNAME/$PROJECT_ID/$_SERVICE_NAME:$COMMIT_SHA`
+> from `$_GCR_HOSTNAME/$PROJECT_ID/$REPO_NAME/$_SERVICE_NAME:$COMMIT_SHA` to `$_GCR_HOSTNAME/$PROJECT_ID/$_SERVICE_NAME:$COMMIT_SHA`
 
 Getting started:
 

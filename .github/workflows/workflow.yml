@@ -1,0 +1,177 @@
+name: Build, Push, Deploy
+
+on:
+  push:
+    branches: ["master"]
+
+env:
+  REGISTRY: eu.gcr.io
+  IMAGE_NAME: ${{ github.event.repository.name }}
+
+jobs:
+  build:
+    name: "Build"
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      security-events: write
+    steps:
+      - name: downcase REPO # https://github.community/t/additional-function-s-lowercase-uppercase/140632/5
+        run: |
+          echo "LOWERCASE_IMAGE_NAME=${IMAGE_NAME,,}" >>${GITHUB_ENV}
+
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Build Docker Image
+        uses: docker/build-push-action@ad44023a93711e3deb337508980b4b5e9bcdc5dc
+        with:
+          context: .
+          push: false
+          tags: ${{ env.REGISTRY }}/${{ env.LOWERCASE_IMAGE_NAME }}:${{ github.sha }}
+
+      - name: Run Snyk to check Docker image for vulnerabilities
+        # Snyk can be used to break the build when it detects vulnerabilities.
+        # In this case we want to upload the issues to GitHub Code Scanning
+        continue-on-error: true
+        uses: snyk/actions/docker@master
+        env:
+          # In order to use the Snyk Action you will need to have a Snyk API token.
+          # More details in https://github.com/snyk/actions#getting-your-snyk-token
+          # or you can signup for free at https://snyk.io/login
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+        with:
+          image: ${{ env.REGISTRY }}/${{ env.LOWERCASE_IMAGE_NAME }}:${{ github.sha }}
+          args: --file=Dockerfile
+
+      - name: Upload result to GitHub Code Scanning
+        uses: github/codeql-action/upload-sarif@v1
+        with:
+          sarif_file: snyk.sarif
+
+  push:
+    name: "Push"
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    needs: build
+    steps:
+      - name: downcase REPO # https://github.community/t/additional-function-s-lowercase-uppercase/140632/5
+        run: |
+          echo "LOWERCASE_IMAGE_NAME=${IMAGE_NAME,,}" >>${GITHUB_ENV}
+
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - uses: "google-github-actions/auth@v0"
+        with:
+          credentials_json: ${{ secrets.GCP_SERVICE_ACCOUNT_KEY }}
+          export_default_credentials: true
+
+      - name: "Set up Cloud SDK"
+        uses: "google-github-actions/setup-gcloud@v0"
+
+      - name: Build image
+        run: |-
+          docker build -t ${{ env.REGISTRY }}/${{ secrets.PROJECT_ID }}/${{ env.LOWERCASE_IMAGE_NAME }}:${{ github.sha }} .
+
+      # Configure docker to use the gcloud command-line tool as a credential helper
+      - run: |
+          gcloud auth configure-docker -q
+
+      # Push image to Google Container Registry
+      - name: Push image to GCR
+        run: |-
+          docker push ${{ env.REGISTRY }}/${{ secrets.PROJECT_ID }}/${{ env.LOWERCASE_IMAGE_NAME }}:${{ github.sha }}
+
+  deploy:
+    name: "Deploy"
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    needs: push
+
+    steps:
+      - name: downcase REPO # https://github.community/t/additional-function-s-lowercase-uppercase/140632/5
+        run: |
+          echo "LOWERCASE_IMAGE_NAME=${IMAGE_NAME,,}" >>${GITHUB_ENV}
+
+      - name: Setup TF Vars
+        run: |
+          echo "TF_VAR_image=${{ env.REGISTRY }}/${{ secrets.PROJECT_ID }}/${{ env.LOWERCASE_IMAGE_NAME }}:${{ github.sha }}" >>${GITHUB_ENV} && \
+          echo "TF_VAR_project=${{ secrets.PROJECT_ID }}" >>${GITHUB_ENV}
+
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Run Snyk to check configuration files for security issues
+        # Snyk can be used to break the build when it detects security issues.
+        # In this case we want to upload the issues to GitHub Code Scanning
+        continue-on-error: false
+        uses: snyk/actions/iac@master
+        env:
+          # In order to use the Snyk Action you will need to have a Snyk API token.
+          # More details in https://github.com/snyk/actions#getting-your-snyk-token
+          # or you can signup for free at https://snyk.io/login
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+        with:
+          file: .
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v1
+        with:
+          cli_config_credentials_token: ${{ secrets.TF_API_TOKEN }}
+
+      - name: Terraform Format
+        id: fmt
+        run: terraform fmt -check
+
+      - name: Terraform Init
+        id: init
+        run: terraform init
+
+      - name: Terraform Validate
+        id: validate
+        run: terraform validate -no-color
+
+      - name: Terraform Plan
+        id: plan
+        if: github.event_name == 'pull_request'
+        run: terraform plan -no-color
+        continue-on-error: true
+        env:
+          GOOGLE_CREDENTIALS: ${{ secrets.GCP_SERVICE_ACCOUNT_KEY }}
+
+      - uses: actions/github-script@0.9.0
+        if: github.event_name == 'pull_request'
+        env:
+          PLAN: "terraform\n${{ steps.plan.outputs.stdout }}"
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const output = `#### Terraform Format and Style 🖌\`${{ steps.fmt.outcome }}\`
+            #### Terraform Initialization ⚙️\`${{ steps.init.outcome }}\`
+            #### Terraform Validation 🤖\`${{ steps.validate.outcome }}\`
+            #### Terraform Plan 📖\`${{ steps.plan.outcome }}\`
+            <details><summary>Show Plan</summary>
+            \`\`\`\n
+            ${process.env.PLAN}
+            \`\`\`
+            </details>
+            *Pusher: @${{ github.actor }}, Action: \`${{ github.event_name }}\`*`;
+            github.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: output
+            })
+
+      - name: Terraform Plan Status
+        if: steps.plan.outcome == 'failure'
+        run: exit 1
+
+      - name: Terraform Apply
+        if: github.ref == 'refs/heads/master' && github.event_name == 'push'
+        run: terraform apply -auto-approve
+        env:
+          GOOGLE_CREDENTIALS: ${{ secrets.GCP_SERVICE_ACCOUNT_KEY }}
