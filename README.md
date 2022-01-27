@@ -35,7 +35,7 @@ Website will be available at `localhost:8080`
 Demo:
 ![](gifs/demo.gif)
 
-Visiting `localhost:8082` will reveal the reverse tunnel address. (Other's can access the website at that link without the need of any port-forwarding)
+Visiting `localhost:8082` will reveal the [ngrok reverse tunnel address](https://ngrok.com/). (Other's can access the website at that link without the need of any port-forwarding)
 
 Build: `docker build . --tag danacr/bimroad`
 
