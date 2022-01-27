@@ -1,18 +1,20 @@
 version: "3"
 services:
   bimroad:
-    image: danacr/bimroad
+    build:
+      context: .
     container_name: bimroad
     ports:
       - 8080:8080
     volumes:
       - persistence:/usr/src/app/
 
-  ngrok:
-    image: wernight/ngrok
-    command: ngrok http bimroad:8080
-    ports:
-      - 8082:4040
+  # # Uncomment the following lines to have a public URL tunnel
+  # ngrok:
+  #   image: wernight/ngrok
+  #   command: ngrok http bimroad:8080
+  #   ports:
+  #     - 8082:4040
 
 volumes:
   persistence:

@@ -37,7 +37,7 @@ Demo:
 
 Visiting `localhost:8082` will reveal the [ngrok reverse tunnel address](https://ngrok.com/). (Other's can access the website at that link without the need of any port-forwarding)
 
-Build: `docker build . --tag danacr/bimroad`
+Build: `docker build . --tag bimroad`
 
 Useful commands:
 
