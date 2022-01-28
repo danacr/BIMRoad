@@ -103,7 +103,10 @@ public class User {
             database db = new database();
             Connection con = db.getConnection();
             PreparedStatement stmt = con.prepareStatement(
-                    "Select * from Users WHERE email='" + email + "' AND password='" + password + "'");
+                    "Select * from Users WHERE email=? AND password=?");
+            stmt.setString(1, email); 
+            stmt.setString(2, password); 
+
 
             ResultSet rs = stmt.executeQuery();
             {
